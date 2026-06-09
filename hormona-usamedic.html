@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hormona · Plantilla USAMEDIC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --usamedic-primary:#2A7DE1;--usamedic-secondary:#1DCAD3;--usamedic-accent:#1BACE4;
+  --usamedic-dark:#1a2b3c;--usamedic-medium:#5a6b7c;--usamedic-light:#eaf6fb;
+  --usamedic-bg-soft:#f5fbfd;--usamedic-white:#ffffff;
+  --usamedic-gradient-primary:linear-gradient(135deg,#1DCAD3 0%,#2A7DE1 100%);
+  --usamedic-gradient-hero:linear-gradient(135deg,#1DCAD3 0%,#1BACE4 50%,#2A7DE1 100%);
+  --usamedic-font-heading:'Montserrat',system-ui,sans-serif;
+  --usamedic-font-body:'Poppins',system-ui,sans-serif;
+  --usamedic-radius-sm:6px;--usamedic-radius-md:14px;--usamedic-radius-lg:24px;
+  --usamedic-shadow-sm:0 2px 4px rgba(42,125,225,0.08);
+  --usamedic-shadow-md:0 8px 24px rgba(42,125,225,0.12);
+  --usamedic-shadow-lg:0 16px 48px rgba(42,125,225,0.18);
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:var(--usamedic-font-body);color:var(--usamedic-dark);background:var(--usamedic-bg-soft);line-height:1.6;}
+h1,h2,h3,h4{font-family:var(--usamedic-font-heading);color:var(--usamedic-primary);font-weight:800;letter-spacing:-0.01em;margin:0 0 0.5em;}
+a{color:var(--usamedic-primary);}
+
+.usamedic-topbar{background:var(--usamedic-gradient-primary);color:#fff;padding:12px 28px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--usamedic-shadow-md);position:sticky;top:0;z-index:100;}
+.usamedic-topbar .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;}
+.usamedic-topbar .brand img{height:42px;width:auto;filter:brightness(0) invert(1);}
+.usamedic-topbar .brand-text{line-height:1.05;}
+.usamedic-topbar .brand-text strong{font-family:var(--usamedic-font-heading);font-weight:800;font-size:1.05rem;letter-spacing:.5px;display:block;}
+.usamedic-topbar .brand-text small{font-weight:300;font-size:.78rem;opacity:.95;}
+.topbar-actions{display:flex;align-items:center;gap:10px;}
+.pill{background:rgba(255,255,255,.18);color:#fff;font-size:.72rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:6px 12px;border-radius:999px;text-decoration:none;}
+.pill:hover{background:rgba(255,255,255,.28);}
+.btn-print{background:#fff;color:var(--usamedic-primary);border:none;cursor:pointer;font-family:var(--usamedic-font-body);font-weight:600;font-size:.85rem;padding:8px 16px;border-radius:var(--usamedic-radius-sm);transition:transform .15s,box-shadow .15s;}
+.btn-print:hover{transform:translateY(-1px);box-shadow:var(--usamedic-shadow-md);}
+
+.wrap{max-width:920px;margin:0 auto;padding:28px 20px 80px;}
+
+.usamedic-hero{background:var(--usamedic-gradient-hero);color:#fff;padding:44px 36px;border-radius:var(--usamedic-radius-lg);margin-bottom:28px;box-shadow:var(--usamedic-shadow-lg);}
+.usamedic-hero .eyebrow{text-transform:uppercase;font-size:.74rem;font-weight:600;letter-spacing:2px;opacity:.92;margin:0 0 8px;}
+.usamedic-hero h1{color:#fff;font-size:2.5rem;margin:0 0 .25em;}
+.usamedic-hero h1 .acro{font-weight:800;letter-spacing:.06em;}
+.usamedic-hero p{margin:0;font-weight:300;font-size:1.06rem;max-width:62ch;opacity:.97;}
+.dets-key{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 0;}
+.dets-key span{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:5px 13px;font-size:.8rem;font-weight:500;}
+.dets-key span b{font-family:var(--usamedic-font-heading);font-weight:800;}
+.disease-input{margin-top:20px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+.disease-input label{font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:1px;opacity:.95;}
+.disease-input .field{flex:1;min-width:240px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.4);border-radius:var(--usamedic-radius-sm);color:#fff;font-family:var(--usamedic-font-heading);font-weight:700;font-size:1.15rem;padding:10px 16px;outline:none;}
+.disease-input .field:empty:before{content:attr(data-ph);color:rgba(255,255,255,.6);font-weight:400;}
+.disease-input .field:focus{background:rgba(255,255,255,.26);}
+
+.callout{background:var(--usamedic-bg-soft);border-left:4px solid var(--usamedic-secondary);border-radius:var(--usamedic-radius-md);padding:18px 22px;margin-bottom:30px;box-shadow:var(--usamedic-shadow-sm);}
+.callout strong{color:var(--usamedic-primary);}
+.callout p{margin:.3em 0;font-size:.95rem;color:var(--usamedic-medium);}
+
+.acts{display:flex;flex-direction:column;gap:0;}
+.act{position:relative;background:#fff;border-radius:var(--usamedic-radius-lg);padding:26px 28px 22px;margin-bottom:18px;box-shadow:var(--usamedic-shadow-sm);border:1px solid var(--usamedic-light);border-top:5px solid var(--usamedic-primary);}
+.act-head{display:flex;align-items:flex-start;gap:16px;margin-bottom:6px;}
+.act-num{flex:none;width:48px;height:48px;border-radius:14px;background:var(--usamedic-gradient-primary);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--usamedic-font-heading);font-weight:800;font-size:1.4rem;box-shadow:var(--usamedic-shadow-sm);}
+.act-title h2{margin:0;font-size:1.35rem;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;}
+.act-title .role{font-size:.74rem;text-transform:uppercase;letter-spacing:1.5px;font-weight:600;color:var(--usamedic-secondary);}
+.act-title h2 .alt{font-size:.92rem;font-weight:400;color:var(--usamedic-medium);font-family:var(--usamedic-font-body);}
+.act-essence{color:var(--usamedic-medium);font-size:.98rem;margin:4px 0 16px;font-style:italic;}
+.prompts{list-style:none;padding:0;margin:0 0 14px;}
+.prompts li{position:relative;padding:5px 0 5px 24px;font-size:.92rem;color:var(--usamedic-dark);}
+.prompts li:before{content:"";position:absolute;left:4px;top:13px;width:8px;height:8px;border-radius:50%;background:var(--usamedic-accent);}
+.fill{min-height:72px;background:var(--usamedic-bg-soft);border:1px dashed #bfe3f0;border-radius:var(--usamedic-radius-md);padding:12px 16px;font-size:.95rem;color:var(--usamedic-dark);outline:none;line-height:1.7;}
+.fill:empty:before{content:attr(data-ph);color:#9fb3c0;font-style:italic;}
+.fill:focus{border-color:var(--usamedic-secondary);background:#fff;box-shadow:var(--usamedic-shadow-sm);}
+
+/* grupos anidados (Organo) */
+.subgroup{margin-top:8px;display:grid;gap:14px;}
+.subfield{border-left:3px solid var(--usamedic-light);padding-left:14px;}
+.subfield h4{margin:0 0 4px;font-size:1rem;color:var(--usamedic-dark);font-weight:700;}
+.subfield .prompts li{font-size:.86rem;padding-top:3px;padding-bottom:3px;}
+
+.connector{display:flex;justify-content:center;align-items:center;height:26px;margin:-6px 0 12px;color:var(--usamedic-accent);}
+.connector svg{width:22px;height:22px;}
+
+.usamedic-footer{margin-top:56px;padding:32px 28px;background:var(--usamedic-dark);color:#fff;text-align:center;border-radius:var(--usamedic-radius-md);}
+.usamedic-footer img{width:170px;filter:brightness(0) invert(1);margin-bottom:14px;}
+.usamedic-footer .tagline{font-family:var(--usamedic-font-heading);font-weight:300;font-size:.95rem;opacity:.85;margin-bottom:8px;}
+.usamedic-footer .links a{color:var(--usamedic-secondary);text-decoration:none;font-size:.85rem;}
+.usamedic-footer .links a:hover{text-decoration:underline;}
+.save-note{text-align:center;color:var(--usamedic-medium);font-size:.78rem;margin-top:18px;}
+
+/* galeria */
+.gal-intro{margin-bottom:30px;}
+.domain{margin-bottom:14px;}
+.domain h2{font-size:1.25rem;border-bottom:2px solid var(--usamedic-light);padding-bottom:8px;margin-bottom:18px;display:flex;align-items:center;gap:10px;}
+.domain h2 .cnt{font-size:.72rem;font-weight:600;color:var(--usamedic-medium);background:var(--usamedic-light);border-radius:999px;padding:3px 10px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:16px;margin-bottom:34px;}
+.tcard{display:flex;flex-direction:column;background:#fff;border:1px solid var(--usamedic-light);border-top:4px solid var(--usamedic-primary);border-radius:var(--usamedic-radius-md);padding:18px 18px 16px;text-decoration:none;color:inherit;box-shadow:var(--usamedic-shadow-sm);transition:transform .15s,box-shadow .15s,border-color .15s;}
+.tcard:hover{transform:translateY(-3px);box-shadow:var(--usamedic-shadow-md);border-top-color:var(--usamedic-secondary);}
+.tcard h3{font-size:1.08rem;margin:0 0 6px;}
+.tcard p{margin:0 0 12px;font-size:.85rem;color:var(--usamedic-medium);flex:1;}
+.tcard .meta{display:flex;align-items:center;justify-content:space-between;}
+.tcard .fields{font-size:.72rem;font-weight:600;color:var(--usamedic-accent);text-transform:uppercase;letter-spacing:.5px;}
+.tcard .go{font-family:var(--usamedic-font-heading);font-weight:700;font-size:.82rem;color:var(--usamedic-primary);}
+
+@media (max-width:560px){.usamedic-hero h1{font-size:1.9rem;}.usamedic-topbar{padding:10px 16px;}.topbar-actions .pill{display:none;}}
+@media print{
+  body{background:#fff;}
+  .usamedic-topbar,.btn-print{position:static;box-shadow:none;}
+  .topbar-actions{display:none;}
+  .usamedic-hero,.act,.usamedic-footer{box-shadow:none;break-inside:avoid;}
+  .usamedic-hero{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .act{border:1px solid #cfe6f0;}.fill{border-style:solid;}.save-note{display:none;}
+}
+</style></head><body>
+<header class="usamedic-topbar">
+  <a class="brand" href="index.html">
+    <img src="assets/usamedic-isotipo.png" alt="USAMEDIC">
+    <div class="brand-text"><strong>USAMEDIC</strong><small>Médicos de Excelencia</small></div>
+  </a>
+  <div class="topbar-actions"><span class="pill">Plantilla · Metadata</span><button class="btn-print" onclick="window.print()">Imprimir / PDF</button></div>
+</header>
+<div class="wrap">
+  <section class="usamedic-hero">
+    <p class="eyebrow">Plantilla de estudio · Concepto: Hormona</p>
+    <h1>Hormona</h1>
+    <p>El <strong>estímulo</strong> desencadena la secreción; el <strong>tipo y estructura</strong> determinan cómo viaja y actúa; la <strong>función</strong> justifica por qué existe. <em>Cada campo es un eslabón: si uno falla, el eje colapsa — y el examen lo sabe.</em></p>
+    
+    <div class="disease-input">
+      <label for="dx">Hormona:</label>
+      <div class="field" id="dx" contenteditable="true" data-ph="Escribe el nombre de la hormona…"></div>
+    </div>
+  </section>
+  <div class="callout">
+    <p><strong>Cómo se usa.</strong> Recorre los campos en orden. Las preguntas guía son disparadores de
+       recuerdo activo: respóndelas de memoria primero, luego verifica contra tu fuente.</p>
+    <p>Editable y autoguardado en este navegador. Usa <strong>Imprimir / PDF</strong> para exportarla llena.</p>
+  </div>
+  <div class="acts">
+  <section class="act"><div class="act-head">
+        <div class="act-num">1</div>
+        <div class="act-title"><div class="role">ANCLA CLÍNICA</div><h2>Preguntas</h2></div>
+      </div><p class="act-essence">Las preguntas de alto rendimiento enmarcan todo el repaso: orientan qué retener, qué comparar y cómo conectar mecanismo con decisión clínica en el examen.</p><ul class="prompts"><li>¿En qué escenario clínico típico del ENAM/residentado aparece esta hormona — cuál es el dato de laboratorio o signo pivote que la pregunta usa para confirmar o descartar disfunción?</li><li>¿Qué cuadro produce su exceso autónomo y qué cuadro produce su déficit absoluto, y cuál es el hallazgo clínico o paraclínico que los diferencia entre sí (no solo del normal)?</li><li>¿Qué prueba diagnóstica confirma la hipersecreción y cuál confirma el déficit — y por qué cada una explota el mecanismo fisiológico específico de esta hormona en lugar de ser arbitraria?</li></ul><div class="fill" contenteditable="true" data-ph="Escenario ENAM → dato pivote → exceso vs. déficit → prueba confirmatoria de cada uno"></div></section>
+<div class="connector"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 4v15M6 13l6 6 6-6"/></svg></div>
+<section class="act"><div class="act-head">
+        <div class="act-num">2</div>
+        <div class="act-title"><div class="role">NATURALEZA QUÍMICA</div><h2>Tipo</h2></div>
+      </div><p class="act-essence">La clase química determina el tipo de receptor, la velocidad de respuesta biológica y toda la lógica de uso farmacológico: no es taxonomía, es mecanismo.</p><ul class="prompts"><li>¿Es peptídica/proteica, esteroide o derivada de aminoácido — y qué tipo de receptor usa en consecuencia (membrana vs. nuclear/citosólico), qué segundo mensajero activa y en qué escala de tiempo genera respuesta?</li><li>¿Por qué su naturaleza química le impide (o le permite) cruzar la membrana celular, y qué implica eso para el sitio donde ejerce su efecto genómico vs. no genómico?</li><li>¿Cómo condiciona su clase química la vida media plasmática, la vía de administración cuando se usa como fármaco y el mecanismo principal de inactivación o degradación?</li></ul><div class="fill" contenteditable="true" data-ph="Peptídica / esteroide / aminoacídica → receptor → mensajero → velocidad → vida media"></div></section>
+<div class="connector"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 4v15M6 13l6 6 6-6"/></svg></div>
+<section class="act"><div class="act-head">
+        <div class="act-num">3</div>
+        <div class="act-title"><div class="role">ORIGEN ANATÓMICO</div><h2>Sitio</h2></div>
+      </div><p class="act-essence">La glándula o célula productora localiza la patología, define si el fallo es primario o central, y orienta el eje regulador al que la hormona pertenece.</p><ul class="prompts"><li>¿Qué glándula, núcleo hipotalámico o célula especializada la sintetiza — y en qué zona histológica específica ocurre la síntesis (p. ej. capa cortical, tipo celular, zona del islote)?</li><li>¿A qué eje hipotálamo-hipofisario-periférico pertenece y cómo se regula jerárquicamente: qué hormona liberadora la estimula, qué hormona hipofisaria la controla, y qué señal periférica cierra el bucle de retroalimentación?</li><li>Si el sitio de producción se destruye (autoinmunidad, cirugía, infiltración), ¿qué cuadro clínico y qué perfil hormonal de laboratorio distinguen ese fallo primario de un fallo central en el mismo eje?</li></ul><div class="fill" contenteditable="true" data-ph="Glándula → zona histológica → eje HHP → perfil primario vs. central"></div></section>
+<div class="connector"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 4v15M6 13l6 6 6-6"/></svg></div>
+<section class="act"><div class="act-head">
+        <div class="act-num">4</div>
+        <div class="act-title"><div class="role">DISPARADOR SECRETOR</div><h2>Estímulo</h2></div>
+      </div><p class="act-essence">Conocer qué activa la secreción permite interpretar pruebas de estimulación, anticipar situaciones de hipersecreción reactiva y distinguirla de la secreción autónoma.</p><ul class="prompts"><li>¿Cuál es el principal estímulo fisiológico de su secreción — metabólico, neural, hormonal u osmótico — y cuál es el mecanismo molecular que acopla ese estímulo con la exocitosis o síntesis de la hormona?</li><li>¿Qué prueba de estimulación diagnóstica replica o potencia ese mismo disparador fisiológico para evaluar la reserva funcional de la glándula, y qué respuesta normal se espera en términos de cifras o porcentaje de incremento?</li><li>En una hipersecreción autónoma (tumor, hiperplasia nodular), ¿por qué el estímulo normal ya no controla la producción, qué diferencia eso del patrón reactivo en laboratorio, y cómo lo aprovecha la prueba de supresión para confirmar autonomía?</li></ul><div class="fill" contenteditable="true" data-ph="Señal disparadora → mecanismo molecular → prueba de estimulación → respuesta esperada"></div></section>
+<div class="connector"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 4v15M6 13l6 6 6-6"/></svg></div>
+<section class="act"><div class="act-head">
+        <div class="act-num">5</div>
+        <div class="act-title"><div class="role">FRENO REGULADOR</div><h2>Inhibición</h2></div>
+      </div><p class="act-essence">El mecanismo inhibitorio completa el eje de retroalimentación: su pérdida explica la hipersecreción patológica y fundamenta las pruebas de supresión usadas en el diagnóstico.</p><ul class="prompts"><li>¿Qué señal, molécula o nivel de retroalimentación suprime su secreción — retroalimentación larga, corta o ultracorta — y en qué estructura anatómica del eje actúa ese freno de forma predominante?</li><li>¿Qué prueba de supresión diagnóstica explota ese mecanismo inhibitorio, qué se administra, en qué dosis y tiempo, y qué resultado (valor o no-supresión) define autonomía secretora patológica?</li><li>¿Cómo se rompe o burla este freno en la patología más frecuente asociada a esta hormona — mutación, receptor alterado, masa autónoma — y qué consecuencia clínica directa tiene esa pérdida de inhibición?</li></ul><div class="fill" contenteditable="true" data-ph="Señal inhibitoria → nivel del eje → prueba de supresión → valor de corte patológico"></div></section>
+<div class="connector"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 4v15M6 13l6 6 6-6"/></svg></div>
+<section class="act"><div class="act-head">
+        <div class="act-num">6</div>
+        <div class="act-title"><div class="role">ARQUITECTURA MOLECULAR</div><h2>Estructura</h2></div>
+      </div><p class="act-essence">La estructura molecular explica la unión al receptor, el transporte en sangre, la fracción biológicamente activa y los blancos donde actúan fármacos análogos o bloqueadores.</p><ul class="prompts"><li>¿Cuál es la estructura de la hormona — número de cadenas, núcleo esteroide, grupo funcional derivado — y qué región o dominio estructural es imprescindible para la unión al receptor y la actividad biológica?</li><li>¿Circula libre o unida a una proteína transportadora específica — cuál es esa proteína, qué fracción libre es biológicamente activa, y en qué situaciones clínicas o fisiológicas varía la proteína transportadora alterando el resultado de laboratorio sin cambiar la función real?</li><li>¿Sobre qué parte de su estructura molecular o de su receptor actúa el principal fármaco análogo, bloqueador o inhibidor de síntesis — y cuál es el objetivo terapéutico concreto que justifica ese punto de acción?</li></ul><div class="fill" contenteditable="true" data-ph="Molécula → dominio activo → transportadora → fracción libre → diana farmacológica"></div></section>
+<div class="connector"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 4v15M6 13l6 6 6-6"/></svg></div>
+<section class="act"><div class="act-head">
+        <div class="act-num">7</div>
+        <div class="act-title"><div class="role">EFECTO DIANA</div><h2>Función</h2></div>
+      </div><p class="act-essence">La acción en el tejido blanco es la razón de ser de la hormona: es el núcleo de toda pregunta fisiopatológica y el eslabón que conecta mecanismo con manifestación clínica y decisión terapéutica.</p><ul class="prompts"><li>¿Cuál es el efecto principal en el tejido diana — metabólico, estructural, secretor, de desarrollo — y cuál es la vía de señalización intracelular que lo media paso a paso, incluyendo el segundo mensajero o cofactor nuclear implicado?</li><li>¿Cómo se manifiesta clínicamente la pérdida completa de esta función — síntomas, signos y alteraciones de laboratorio — y qué hallazgo específico la diferencia de otra endocrinopatía con presentación parecida?</li><li>¿Qué fármaco mimetiza, potencia o antagoniza esta función en tejido diana, a través de qué mecanismo de acción lo hace, y en qué condición clínica está indicado ese uso terapéutico?</li></ul><div class="fill" contenteditable="true" data-ph="Tejido diana → efecto → vía de señalización → manifestación por déficit/exceso → fármaco y mecanismo"></div></section>
+  </div>
+  <p class="save-note" id="saveNote">Los cambios se guardan automáticamente en este navegador.</p>
+  <footer class="usamedic-footer">
+    <img src="assets/usamedic-logo-stacked.png" alt="USAMEDIC · Médicos de Excelencia">
+    <div class="tagline">Preparación Residentado Médico · ENAM · Internado</div>
+    <div class="links">
+      <a href="https://www.usamedic.pe" target="_blank" rel="noopener">usamedic.pe</a> ·
+      <a href="https://instagram.com/usamedic" target="_blank" rel="noopener">Instagram</a> ·
+      <a href="https://youtube.com/usamedic" target="_blank" rel="noopener">YouTube</a>
+    </div>
+  </footer>
+</div>
+<script>
+(function(){
+  var KEY='usamedic-tpl-hormona';
+  var fields=[document.getElementById('dx')].concat(Array.prototype.slice.call(document.querySelectorAll('.fill')));
+  var saved; try{saved=JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){saved={};}
+  fields.forEach(function(f,i){
+    if(saved['f'+i]!=null) f.innerHTML=saved['f'+i];
+    f.addEventListener('input',function(){
+      var data={}; fields.forEach(function(g,j){data['f'+j]=g.innerHTML;});
+      try{localStorage.setItem(KEY,JSON.stringify(data));}catch(e){}
+      document.getElementById('saveNote').textContent='Guardado ✓ — '+new Date().toLocaleTimeString();
+    });
+  });
+})();
+</script>
+</body></html>

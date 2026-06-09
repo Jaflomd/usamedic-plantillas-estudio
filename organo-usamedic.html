@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Órgano · Plantilla USAMEDIC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --usamedic-primary:#2A7DE1;--usamedic-secondary:#1DCAD3;--usamedic-accent:#1BACE4;
+  --usamedic-dark:#1a2b3c;--usamedic-medium:#5a6b7c;--usamedic-light:#eaf6fb;
+  --usamedic-bg-soft:#f5fbfd;--usamedic-white:#ffffff;
+  --usamedic-gradient-primary:linear-gradient(135deg,#1DCAD3 0%,#2A7DE1 100%);
+  --usamedic-gradient-hero:linear-gradient(135deg,#1DCAD3 0%,#1BACE4 50%,#2A7DE1 100%);
+  --usamedic-font-heading:'Montserrat',system-ui,sans-serif;
+  --usamedic-font-body:'Poppins',system-ui,sans-serif;
+  --usamedic-radius-sm:6px;--usamedic-radius-md:14px;--usamedic-radius-lg:24px;
+  --usamedic-shadow-sm:0 2px 4px rgba(42,125,225,0.08);
+  --usamedic-shadow-md:0 8px 24px rgba(42,125,225,0.12);
+  --usamedic-shadow-lg:0 16px 48px rgba(42,125,225,0.18);
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:var(--usamedic-font-body);color:var(--usamedic-dark);background:var(--usamedic-bg-soft);line-height:1.6;}
+h1,h2,h3,h4{font-family:var(--usamedic-font-heading);color:var(--usamedic-primary);font-weight:800;letter-spacing:-0.01em;margin:0 0 0.5em;}
+a{color:var(--usamedic-primary);}
+
+.usamedic-topbar{background:var(--usamedic-gradient-primary);color:#fff;padding:12px 28px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--usamedic-shadow-md);position:sticky;top:0;z-index:100;}
+.usamedic-topbar .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;}
+.usamedic-topbar .brand img{height:42px;width:auto;filter:brightness(0) invert(1);}
+.usamedic-topbar .brand-text{line-height:1.05;}
+.usamedic-topbar .brand-text strong{font-family:var(--usamedic-font-heading);font-weight:800;font-size:1.05rem;letter-spacing:.5px;display:block;}
+.usamedic-topbar .brand-text small{font-weight:300;font-size:.78rem;opacity:.95;}
+.topbar-actions{display:flex;align-items:center;gap:10px;}
+.pill{background:rgba(255,255,255,.18);color:#fff;font-size:.72rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:6px 12px;border-radius:999px;text-decoration:none;}
+.pill:hover{background:rgba(255,255,255,.28);}
+.btn-print{background:#fff;color:var(--usamedic-primary);border:none;cursor:pointer;font-family:var(--usamedic-font-body);font-weight:600;font-size:.85rem;padding:8px 16px;border-radius:var(--usamedic-radius-sm);transition:transform .15s,box-shadow .15s;}
+.btn-print:hover{transform:translateY(-1px);box-shadow:var(--usamedic-shadow-md);}
+
+.wrap{max-width:920px;margin:0 auto;padding:28px 20px 80px;}
+
+.usamedic-hero{background:var(--usamedic-gradient-hero);color:#fff;padding:44px 36px;border-radius:var(--usamedic-radius-lg);margin-bottom:28px;box-shadow:var(--usamedic-shadow-lg);}
+.usamedic-hero .eyebrow{text-transform:uppercase;font-size:.74rem;font-weight:600;letter-spacing:2px;opacity:.92;margin:0 0 8px;}
+.usamedic-hero h1{color:#fff;font-size:2.5rem;margin:0 0 .25em;}
+.usamedic-hero h1 .acro{font-weight:800;letter-spacing:.06em;}
+.usamedic-hero p{margin:0;font-weight:300;font-size:1.06rem;max-width:62ch;opacity:.97;}
+.dets-key{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 0;}
+.dets-key span{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:5px 13px;font-size:.8rem;font-weight:500;}
+.dets-key span b{font-family:var(--usamedic-font-heading);font-weight:800;}
+.disease-input{margin-top:20px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+.disease-input label{font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:1px;opacity:.95;}
+.disease-input .field{flex:1;min-width:240px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.4);border-radius:var(--usamedic-radius-sm);color:#fff;font-family:var(--usamedic-font-heading);font-weight:700;font-size:1.15rem;padding:10px 16px;outline:none;}
+.disease-input .field:empty:before{content:attr(data-ph);color:rgba(255,255,255,.6);font-weight:400;}
+.disease-input .field:focus{background:rgba(255,255,255,.26);}
+
+.callout{background:var(--usamedic-bg-soft);border-left:4px solid var(--usamedic-secondary);border-radius:var(--usamedic-radius-md);padding:18px 22px;margin-bottom:30px;box-shadow:var(--usamedic-shadow-sm);}
+.callout strong{color:var(--usamedic-primary);}
+.callout p{margin:.3em 0;font-size:.95rem;color:var(--usamedic-medium);}
+
+.acts{display:flex;flex-direction:column;gap:0;}
+.act{position:relative;background:#fff;border-radius:var(--usamedic-radius-lg);padding:26px 28px 22px;margin-bottom:18px;box-shadow:var(--usamedic-shadow-sm);border:1px solid var(--usamedic-light);border-top:5px solid var(--usamedic-primary);}
+.act-head{display:flex;align-items:flex-start;gap:16px;margin-bottom:6px;}
+.act-num{flex:none;width:48px;height:48px;border-radius:14px;background:var(--usamedic-gradient-primary);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--usamedic-font-heading);font-weight:800;font-size:1.4rem;box-shadow:var(--usamedic-shadow-sm);}
+.act-title h2{margin:0;font-size:1.35rem;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;}
+.act-title .role{font-size:.74rem;text-transform:uppercase;letter-spacing:1.5px;font-weight:600;color:var(--usamedic-secondary);}
+.act-title h2 .alt{font-size:.92rem;font-weight:400;color:var(--usamedic-medium);font-family:var(--usamedic-font-body);}
+.act-essence{color:var(--usamedic-medium);font-size:.98rem;margin:4px 0 16px;font-style:italic;}
+.prompts{list-style:none;padding:0;margin:0 0 14px;}
+.prompts li{position:relative;padding:5px 0 5px 24px;font-size:.92rem;color:var(--usamedic-dark);}
+.prompts li:before{content:"";position:absolute;left:4px;top:13px;width:8px;height:8px;border-radius:50%;background:var(--usamedic-accent);}
+.fill{min-height:72px;background:var(--usamedic-bg-soft);border:1px dashed #bfe3f0;border-radius:var(--usamedic-radius-md);padding:12px 16px;font-size:.95rem;color:var(--usamedic-dark);outline:none;line-height:1.7;}
+.fill:empty:before{content:attr(data-ph);color:#9fb3c0;font-style:italic;}
+.fill:focus{border-color:var(--usamedic-secondary);background:#fff;box-shadow:var(--usamedic-shadow-sm);}
+
+/* grupos anidados (Organo) */
+.subgroup{margin-top:8px;display:grid;gap:14px;}
+.subfield{border-left:3px solid var(--usamedic-light);padding-left:14px;}
+.subfield h4{margin:0 0 4px;font-size:1rem;color:var(--usamedic-dark);font-weight:700;}
+.subfield .prompts li{font-size:.86rem;padding-top:3px;padding-bottom:3px;}
+
+.connector{display:flex;justify-content:center;align-items:center;height:26px;margin:-6px 0 12px;color:var(--usamedic-accent);}
+.connector svg{width:22px;height:22px;}
+
+.usamedic-footer{margin-top:56px;padding:32px 28px;background:var(--usamedic-dark);color:#fff;text-align:center;border-radius:var(--usamedic-radius-md);}
+.usamedic-footer img{width:170px;filter:brightness(0) invert(1);margin-bottom:14px;}
+.usamedic-footer .tagline{font-family:var(--usamedic-font-heading);font-weight:300;font-size:.95rem;opacity:.85;margin-bottom:8px;}
+.usamedic-footer .links a{color:var(--usamedic-secondary);text-decoration:none;font-size:.85rem;}
+.usamedic-footer .links a:hover{text-decoration:underline;}
+.save-note{text-align:center;color:var(--usamedic-medium);font-size:.78rem;margin-top:18px;}
+
+/* galeria */
+.gal-intro{margin-bottom:30px;}
+.domain{margin-bottom:14px;}
+.domain h2{font-size:1.25rem;border-bottom:2px solid var(--usamedic-light);padding-bottom:8px;margin-bottom:18px;display:flex;align-items:center;gap:10px;}
+.domain h2 .cnt{font-size:.72rem;font-weight:600;color:var(--usamedic-medium);background:var(--usamedic-light);border-radius:999px;padding:3px 10px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:16px;margin-bottom:34px;}
+.tcard{display:flex;flex-direction:column;background:#fff;border:1px solid var(--usamedic-light);border-top:4px solid var(--usamedic-primary);border-radius:var(--usamedic-radius-md);padding:18px 18px 16px;text-decoration:none;color:inherit;box-shadow:var(--usamedic-shadow-sm);transition:transform .15s,box-shadow .15s,border-color .15s;}
+.tcard:hover{transform:translateY(-3px);box-shadow:var(--usamedic-shadow-md);border-top-color:var(--usamedic-secondary);}
+.tcard h3{font-size:1.08rem;margin:0 0 6px;}
+.tcard p{margin:0 0 12px;font-size:.85rem;color:var(--usamedic-medium);flex:1;}
+.tcard .meta{display:flex;align-items:center;justify-content:space-between;}
+.tcard .fields{font-size:.72rem;font-weight:600;color:var(--usamedic-accent);text-transform:uppercase;letter-spacing:.5px;}
+.tcard .go{font-family:var(--usamedic-font-heading);font-weight:700;font-size:.82rem;color:var(--usamedic-primary);}
+
+@media (max-width:560px){.usamedic-hero h1{font-size:1.9rem;}.usamedic-topbar{padding:10px 16px;}.topbar-actions .pill{display:none;}}
+@media print{
+  body{background:#fff;}
+  .usamedic-topbar,.btn-print{position:static;box-shadow:none;}
+  .topbar-actions{display:none;}
+  .usamedic-hero,.act,.usamedic-footer{box-shadow:none;break-inside:avoid;}
+  .usamedic-hero{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .act{border:1px solid #cfe6f0;}.fill{border-style:solid;}.save-note{display:none;}
+}
+</style></head><body>
+<header class="usamedic-topbar">
+  <a class="brand" href="index.html">
+    <img src="assets/usamedic-isotipo.png" alt="USAMEDIC">
+    <div class="brand-text"><strong>USAMEDIC</strong><small>Médicos de Excelencia</small></div>
+  </a>
+  <div class="topbar-actions"><span class="pill">Plantilla · Metadata</span><button class="btn-print" onclick="window.print()">Imprimir / PDF</button></div>
+</header>
+<div class="wrap">
+  <section class="usamedic-hero">
+    <p class="eyebrow">Plantilla de estudio · Concepto: Órgano</p>
+    <h1>Órgano</h1>
+    <p>La <strong>forma dicta la función</strong>: cada capa anatómica —macro, micro y vascular— construye el sustrato desde el cual emerge la fisiología, y comprender ese sustrato es lo que permite <em>anticipar</em> qué falla, por qué mecanismo y cómo se traduce en clínica e imagen cuando el órgano fracasa.</p>
+    
+    <div class="disease-input">
+      <label for="dx">Órgano:</label>
+      <div class="field" id="dx" contenteditable="true" data-ph="Escribe el órgano…"></div>
+    </div>
+  </section>
+  <div class="callout">
+    <p><strong>Cómo se usa.</strong> Recorre los campos en orden. Las preguntas guía son disparadores de
+       recuerdo activo: respóndelas de memoria primero, luego verifica contra tu fuente.</p>
+    <p>Editable y autoguardado en este navegador. Usa <strong>Imprimir / PDF</strong> para exportarla llena.</p>
+  </div>
+  <div class="acts">
+  <section class="act"><div class="act-head">
+        <div class="act-num">1</div>
+        <div class="act-title"><div class="role">SÍNTESIS INTEGRADORA</div><h2>¿Cómo resumirías este tema?</h2></div>
+      </div><p class="act-essence">Destila la idea-eje que conecta estructura, función y falla del órgano en un argumento clínicamente accionable.</p><ul class="prompts"><li>¿Qué característica histológica o arquitectónica de este órgano determina directamente su función principal, y cómo esa misma característica explica la vulnerabilidad más importante del órgano ante la enfermedad?</li><li>Si tuvieras que jerarquizar este órgano en tres niveles —estructura → mecanismo funcional → consecuencia de su falla—, ¿cuáles elegirías y qué hilo causal los conecta?</li><li>¿Cuál es el concepto que el ENAM y el residentado peruano prueban con mayor frecuencia sobre este órgano, qué razonamiento fisiopatológico subyace a esa pregunta y cuál es el error de razonamiento más común del candidato?</li></ul><div class="fill" contenteditable="true" data-ph="Estructura clave → mecanismo funcional → falla predecible → trampa frecuente ENAM"></div></section>
+<div class="connector"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 4v15M6 13l6 6 6-6"/></svg></div>
+<section class="act"><div class="act-head">
+        <div class="act-num">2</div>
+        <div class="act-title"><div class="role">MAPA ESTRUCTURAL</div><h2>Anatomía macroscópica</h2></div>
+      </div><p class="act-essence">Define volumen, posición, relaciones y partes reconocibles: el mapa que orienta semiología, procedimientos e imagen.</p><div class="subgroup"><div class="subfield">
+            <h4>Localización</h4>
+            <ul class="prompts"><li>¿En qué región anatómica se sitúa este órgano, qué planos o estructuras vecinas delimitan su celda o lecho, y cuál de esas relaciones tiene mayor implicancia quirúrgica o en el diagnóstico diferencial por dolor?</li><li>¿Qué variante posicional, anomalía de localización o ectopia de este órgano tiene relevancia clínica documentada —ya sea por riesgo de error diagnóstico, complicación quirúrgica o presentación atípica—?</li></ul>
+            <div class="fill" contenteditable="true" data-ph="Región → planos → referencias óseas/viscerales → variante clínicamente relevante"></div>
+          </div><div class="subfield">
+            <h4>Dimensiones</h4>
+            <ul class="prompts"><li>¿Cuáles son los valores normales de tamaño y peso de este órgano, a partir de qué umbral específico se define hiper- o hipotrofia patológica, y qué método de imagen emplea ese umbral como criterio diagnóstico primario?</li><li>¿Qué patología cursa con cambio de tamaño del órgano como dato diagnóstico precoz —antes de que aparezcan síntomas— y cómo se cuantifica ese cambio en la práctica clínica habitual?</li></ul>
+            <div class="fill" contenteditable="true" data-ph="Peso/tamaño normal → umbral patológico → método de medición → patología índice"></div>
+          </div><div class="subfield">
+            <h4>¿Cuáles son sus partes?</h4>
+            <ul class="prompts"><li>¿Cómo se segmenta o subdivide este órgano anatómicamente, qué función diferencial cumple cada parte y cuál de ellas tiene mayor relevancia en cirugía de resección o en la estadificación de su patología más frecuente?</li><li>¿Qué estructura de revestimiento, cápsula o serosa posee este órgano, y qué consecuencia fisiopatológica tiene su distensión aguda, su rotura o su inflamación —incluyendo la vía del dolor—?</li><li>¿Existe una porción específica de este órgano con mayor predisposición a un patrón lesional particular (neoplasia, infarto, infección, quiste) y qué explica esa distribución anatómica preferencial?</li></ul>
+            <div class="fill" contenteditable="true" data-ph="Partes → función diferencial → relevancia quirúrgica/estadificación → zona de mayor riesgo lesional"></div>
+          </div><div class="subfield">
+            <h4>Función</h4>
+            <ul class="prompts"><li>¿Cuál es la función principal de este órgano y cuáles las secundarias; qué mecanismo de compensación se activa cuando una de ellas falla parcialmente, y hasta qué punto esa compensación puede enmascarar la enfermedad?</li><li>¿Qué parámetro de laboratorio o signo clínico refleja de forma más directa y temprana la función de este órgano, por qué mecanismo lo hace y cuál es su limitación como marcador aislado?</li><li>¿Cómo se modifica la función de este órgano en estados fisiológicos demandantes —embarazo, ejercicio extremo, envejecimiento— o ante un estímulo hormonal específico, y qué implicancia tiene esa modulación en la interpretación de resultados de laboratorio en esas poblaciones?</li></ul>
+            <div class="fill" contenteditable="true" data-ph="Función primaria → secundaria → compensación → marcador funcional → modulación fisiológica"></div>
+          </div></div></section>
+<div class="connector"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 4v15M6 13l6 6 6-6"/></svg></div>
+<section class="act"><div class="act-head">
+        <div class="act-num">3</div>
+        <div class="act-title"><div class="role">FUNDAMENTO CELULAR</div><h2>Anatomía microscópica</h2></div>
+      </div><p class="act-essence">Explica qué células y tejidos componen el órgano, cómo su origen embrionario determina sus malformaciones y cómo su histología predice su comportamiento patológico.</p><div class="subgroup"><div class="subfield">
+            <h4>Embriología</h4>
+            <ul class="prompts"><li>¿De qué hoja embrionaria y estructura precursora deriva este órgano, en qué semana ocurre la diferenciación crítica, y qué malformación congénita resulta del fallo en ese proceso —incluyendo su presentación clínica y frecuencia relativa en el ENAM?</li><li>¿Qué teratógenos, infecciones o eventos maternos son más peligrosos durante la ventana de organogénesis de este órgano, y qué anomalía producen por qué mecanismo?</li><li>¿Qué remanente embrionario o error de migración/fusión de este órgano tiene relevancia clínica en el adulto —ya sea como hallazgo incidental, fuente de patología o trampa diagnóstica—?</li></ul>
+            <div class="fill" contenteditable="true" data-ph="Hoja embrionaria → precursor → ventana crítica → malformación → remanente adulto relevante"></div>
+          </div><div class="subfield">
+            <h4>Histología</h4>
+            <ul class="prompts"><li>¿Qué tipos celulares especializados conforman la unidad funcional de este órgano, qué función específica y diferenciada cumple cada uno, y cuál es el más vulnerable ante la noxa más frecuente que afecta al órgano?</li><li>¿Cómo se vería este tejido en un corte histológico con HE en condiciones normales, y qué hallazgo microscópico —cambio celular, infiltrado, patrón arquitectural— es patognomónico o altamente sugestivo de su lesión más frecuente o más preguntada en el ENAM?</li><li>¿Qué tipo de epitelio, estroma o célula de soporte predomina en este órgano, por qué esa característica lo predispone a ciertos tipos histológicos de neoplasia, y cuál es el tumor maligno más frecuente de este órgano en la población peruana?</li></ul>
+            <div class="fill" contenteditable="true" data-ph="Unidad funcional → célula más vulnerable → HE normal → hallazgo patognomónico → tumor más frecuente"></div>
+          </div></div></section>
+<div class="connector"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 4v15M6 13l6 6 6-6"/></svg></div>
+<section class="act"><div class="act-head">
+        <div class="act-num">4</div>
+        <div class="act-title"><div class="role">RED LOGÍSTICA</div><h2>VAN</h2></div>
+      </div><p class="act-essence">Mapea el soporte vascular, linfático y nervioso que mantiene vivo al órgano y que explica el patrón de isquemia, diseminación metastásica y dolor referido.</p><div class="subgroup"><div class="subfield">
+            <h4>Irrigación</h4>
+            <ul class="prompts"><li>¿Cuál es la arteria principal que irriga este órgano, de qué tronco o aorta deriva, y qué zona queda en riesgo preferencial de infarto si se ocluye su rama más distal o su arteria terminal —por qué anatomía o circulación de tipo terminal?</li><li>¿Existe circulación colateral, zona limítrofe o territorio de doble irrigación en este órgano, qué relevancia tiene en cirugía de resección o ante enfermedad vascular oclusiva, y cuándo esa colateral es insuficiente para proteger al tejido?</li></ul>
+            <div class="fill" contenteditable="true" data-ph="Arteria principal → origen → zona vulnerable → tipo de circulación → colateral y sus límites"></div>
+          </div><div class="subfield">
+            <h4>Drenaje venoso</h4>
+            <ul class="prompts"><li>¿A qué sistema venoso drena este órgano, qué consecuencia fisiopatológica tiene la hipertensión en ese sistema sobre la estructura y función del órgano, y cómo se expresa clínicamente esa consecuencia?</li><li>¿Existen anastomosis portosistémicas, venas comunicantes o tributarias de importancia que expliquen una manifestación clínica específica —sangrado, varices, circulación colateral visible— y cuál es la implicancia terapéutica de ese hallazgo?</li></ul>
+            <div class="fill" contenteditable="true" data-ph="Vena → sistema → hipertensión → manifestación clínica → implicancia terapéutica"></div>
+          </div><div class="subfield">
+            <h4>Drenaje linfático</h4>
+            <ul class="prompts"><li>¿A qué cadena ganglionar drena este órgano, cuál es la primera estación de metástasis linfática —ganglio centinela o ganglio de Virchow según corresponda— y qué exploración física o imagen permite detectar compromiso ganglionar en ese nivel?</li><li>¿Cómo varía el patrón de diseminación linfática según la localización del tumor dentro del órgano —polo superior vs. inferior, cara anterior vs. posterior, etc.— y qué implicancia tiene esa variación en la estadificación y en la decisión quirúrgica?</li></ul>
+            <div class="fill" contenteditable="true" data-ph="Cadena ganglionar → 1ª estación → detección → variación por segmento → implicancia quirúrgica"></div>
+          </div><div class="subfield">
+            <h4>Inervación</h4>
+            <ul class="prompts"><li>¿Qué nervios —simpáticos, parasimpáticos y/o somáticos— inervan este órgano, qué función autónoma o sensitiva ejerce cada vía, y qué consecuencia funcional concreta produce la sección o lesión de cada una de ellas?</li><li>¿A qué dermatoma o zona de dolor referido corresponde la nocicepción visceral de este órgano, por qué mecanismo de convergencia espino-talámica se produce ese fenómeno, y cuál es el diagnóstico diferencial más importante que puede confundirse con ese patrón de dolor referido?</li><li>¿Qué procedimiento quirúrgico o bloqueo anestésico se basa en el conocimiento de la inervación de este órgano, cuál es el nervio diana y qué complicación neurológica puede producirse si el bloqueo es incorrecto?</li></ul>
+            <div class="fill" contenteditable="true" data-ph="Nervio → función → sección → dolor referido → diagnóstico diferencial → bloqueo y complicación"></div>
+          </div></div></section>
+<div class="connector"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 4v15M6 13l6 6 6-6"/></svg></div>
+<section class="act"><div class="act-head">
+        <div class="act-num">5</div>
+        <div class="act-title"><div class="role">TRADUCCIÓN VISUAL</div><h2>Imagenología</h2></div>
+      </div><p class="act-essence">Conecta la anatomía y la fisiopatología con su representación en imagen para guiar diagnóstico, estadificación y decisión clínica.</p><ul class="prompts"><li>¿Cuál es el método de imagen de primera elección para evaluar este órgano en el contexto de su patología más frecuente, qué hallazgo específico busca el radiólogo, y en qué situación clínica la segunda opción de imagen aporta información crítica que la primera no puede dar?</li><li>¿Qué signo radiológico, ecográfico o tomográfico es patognomónico o altamente sugestivo de la patología más frecuente o más grave de este órgano, cómo se genera ese signo a partir de la anatomía patológica subyacente, y cuál es su sensibilidad y especificidad aproximadas?</li><li>¿En qué situación clínica concreta el hallazgo de imagen cambia de forma inmediata la conducta —indica cirugía de urgencia, contraindica un procedimiento, modifica el estadio o descarta un diagnóstico— y qué elemento de la imagen es el decisor en esa situación?</li></ul><div class="fill" contenteditable="true" data-ph="Método 1ª elección → hallazgo buscado → signo patognomónico → mecanismo → impacto en conducta"></div></section>
+<div class="connector"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 4v15M6 13l6 6 6-6"/></svg></div>
+<section class="act"><div class="act-head">
+        <div class="act-num">6</div>
+        <div class="act-title"><div class="role">CLÍNICA DEL FALLO</div><h2>¿Qué pasa si fracasa?</h2></div>
+      </div><p class="act-essence">Cierra el razonamiento: la disfunción como consecuencia predecible y mecánicamente explicable de todo lo anterior.</p><ul class="prompts"><li>¿Cuál es la tríada o constelación clínica que define la insuficiencia aguda de este órgano, qué mecanismo fisiopatológico específico explica cada componente de esa tríada, y cuál de ellos aparece primero y permite el diagnóstico más temprano?</li><li>¿Cuál es la causa de fallo orgánico más frecuente en la población peruana o en el perfil epidemiológico ENAM, qué hallazgo de laboratorio o imagen confirma ese diagnóstico de forma rápida y con qué sensibilidad, y cuál es el error diagnóstico más frecuente que retrasa la atención?</li><li>¿Cuál es el tratamiento de primera línea ante la falla aguda de este órgano —incluyendo dosis o esquema si aplica—, por qué mecanismo revierte la fisiopatología, y qué complicación del propio tratamiento debes monitorizar y en qué ventana de tiempo?</li></ul><div class="fill" contenteditable="true" data-ph="Causa → tríada → mecanismo de cada componente → lab/imagen confirmatorio → tratamiento → complicación del Tx"></div></section>
+  </div>
+  <p class="save-note" id="saveNote">Los cambios se guardan automáticamente en este navegador.</p>
+  <footer class="usamedic-footer">
+    <img src="assets/usamedic-logo-stacked.png" alt="USAMEDIC · Médicos de Excelencia">
+    <div class="tagline">Preparación Residentado Médico · ENAM · Internado</div>
+    <div class="links">
+      <a href="https://www.usamedic.pe" target="_blank" rel="noopener">usamedic.pe</a> ·
+      <a href="https://instagram.com/usamedic" target="_blank" rel="noopener">Instagram</a> ·
+      <a href="https://youtube.com/usamedic" target="_blank" rel="noopener">YouTube</a>
+    </div>
+  </footer>
+</div>
+<script>
+(function(){
+  var KEY='usamedic-tpl-organo';
+  var fields=[document.getElementById('dx')].concat(Array.prototype.slice.call(document.querySelectorAll('.fill')));
+  var saved; try{saved=JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){saved={};}
+  fields.forEach(function(f,i){
+    if(saved['f'+i]!=null) f.innerHTML=saved['f'+i];
+    f.addEventListener('input',function(){
+      var data={}; fields.forEach(function(g,j){data['f'+j]=g.innerHTML;});
+      try{localStorage.setItem(KEY,JSON.stringify(data));}catch(e){}
+      document.getElementById('saveNote').textContent='Guardado ✓ — '+new Date().toLocaleTimeString();
+    });
+  });
+})();
+</script>
+</body></html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vacuna · Plantilla USAMEDIC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --usamedic-primary:#2A7DE1;--usamedic-secondary:#1DCAD3;--usamedic-accent:#1BACE4;
+  --usamedic-dark:#1a2b3c;--usamedic-medium:#5a6b7c;--usamedic-light:#eaf6fb;
+  --usamedic-bg-soft:#f5fbfd;--usamedic-white:#ffffff;
+  --usamedic-gradient-primary:linear-gradient(135deg,#1DCAD3 0%,#2A7DE1 100%);
+  --usamedic-gradient-hero:linear-gradient(135deg,#1DCAD3 0%,#1BACE4 50%,#2A7DE1 100%);
+  --usamedic-font-heading:'Montserrat',system-ui,sans-serif;
+  --usamedic-font-body:'Poppins',system-ui,sans-serif;
+  --usamedic-radius-sm:6px;--usamedic-radius-md:14px;--usamedic-radius-lg:24px;
+  --usamedic-shadow-sm:0 2px 4px rgba(42,125,225,0.08);
+  --usamedic-shadow-md:0 8px 24px rgba(42,125,225,0.12);
+  --usamedic-shadow-lg:0 16px 48px rgba(42,125,225,0.18);
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:var(--usamedic-font-body);color:var(--usamedic-dark);background:var(--usamedic-bg-soft);line-height:1.6;}
+h1,h2,h3,h4{font-family:var(--usamedic-font-heading);color:var(--usamedic-primary);font-weight:800;letter-spacing:-0.01em;margin:0 0 0.5em;}
+a{color:var(--usamedic-primary);}
+
+.usamedic-topbar{background:var(--usamedic-gradient-primary);color:#fff;padding:12px 28px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--usamedic-shadow-md);position:sticky;top:0;z-index:100;}
+.usamedic-topbar .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;}
+.usamedic-topbar .brand img{height:42px;width:auto;filter:brightness(0) invert(1);}
+.usamedic-topbar .brand-text{line-height:1.05;}
+.usamedic-topbar .brand-text strong{font-family:var(--usamedic-font-heading);font-weight:800;font-size:1.05rem;letter-spacing:.5px;display:block;}
+.usamedic-topbar .brand-text small{font-weight:300;font-size:.78rem;opacity:.95;}
+.topbar-actions{display:flex;align-items:center;gap:10px;}
+.pill{background:rgba(255,255,255,.18);color:#fff;font-size:.72rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:6px 12px;border-radius:999px;text-decoration:none;}
+.pill:hover{background:rgba(255,255,255,.28);}
+.btn-print{background:#fff;color:var(--usamedic-primary);border:none;cursor:pointer;font-family:var(--usamedic-font-body);font-weight:600;font-size:.85rem;padding:8px 16px;border-radius:var(--usamedic-radius-sm);transition:transform .15s,box-shadow .15s;}
+.btn-print:hover{transform:translateY(-1px);box-shadow:var(--usamedic-shadow-md);}
+
+.wrap{max-width:920px;margin:0 auto;padding:28px 20px 80px;}
+
+.usamedic-hero{background:var(--usamedic-gradient-hero);color:#fff;padding:44px 36px;border-radius:var(--usamedic-radius-lg);margin-bottom:28px;box-shadow:var(--usamedic-shadow-lg);}
+.usamedic-hero .eyebrow{text-transform:uppercase;font-size:.74rem;font-weight:600;letter-spacing:2px;opacity:.92;margin:0 0 8px;}
+.usamedic-hero h1{color:#fff;font-size:2.5rem;margin:0 0 .25em;}
+.usamedic-hero h1 .acro{font-weight:800;letter-spacing:.06em;}
+.usamedic-hero p{margin:0;font-weight:300;font-size:1.06rem;max-width:62ch;opacity:.97;}
+.dets-key{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 0;}
+.dets-key span{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:5px 13px;font-size:.8rem;font-weight:500;}
+.dets-key span b{font-family:var(--usamedic-font-heading);font-weight:800;}
+.disease-input{margin-top:20px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+.disease-input label{font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:1px;opacity:.95;}
+.disease-input .field{flex:1;min-width:240px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.4);border-radius:var(--usamedic-radius-sm);color:#fff;font-family:var(--usamedic-font-heading);font-weight:700;font-size:1.15rem;padding:10px 16px;outline:none;}
+.disease-input .field:empty:before{content:attr(data-ph);color:rgba(255,255,255,.6);font-weight:400;}
+.disease-input .field:focus{background:rgba(255,255,255,.26);}
+
+.callout{background:var(--usamedic-bg-soft);border-left:4px solid var(--usamedic-secondary);border-radius:var(--usamedic-radius-md);padding:18px 22px;margin-bottom:30px;box-shadow:var(--usamedic-shadow-sm);}
+.callout strong{color:var(--usamedic-primary);}
+.callout p{margin:.3em 0;font-size:.95rem;color:var(--usamedic-medium);}
+
+.acts{display:flex;flex-direction:column;gap:0;}
+.act{position:relative;background:#fff;border-radius:var(--usamedic-radius-lg);padding:26px 28px 22px;margin-bottom:18px;box-shadow:var(--usamedic-shadow-sm);border:1px solid var(--usamedic-light);border-top:5px solid var(--usamedic-primary);}
+.act-head{display:flex;align-items:flex-start;gap:16px;margin-bottom:6px;}
+.act-num{flex:none;width:48px;height:48px;border-radius:14px;background:var(--usamedic-gradient-primary);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--usamedic-font-heading);font-weight:800;font-size:1.4rem;box-shadow:var(--usamedic-shadow-sm);}
+.act-title h2{margin:0;font-size:1.35rem;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;}
+.act-title .role{font-size:.74rem;text-transform:uppercase;letter-spacing:1.5px;font-weight:600;color:var(--usamedic-secondary);}
+.act-title h2 .alt{font-size:.92rem;font-weight:400;color:var(--usamedic-medium);font-family:var(--usamedic-font-body);}
+.act-essence{color:var(--usamedic-medium);font-size:.98rem;margin:4px 0 16px;font-style:italic;}
+.prompts{list-style:none;padding:0;margin:0 0 14px;}
+.prompts li{position:relative;padding:5px 0 5px 24px;font-size:.92rem;color:var(--usamedic-dark);}
+.prompts li:before{content:"";position:absolute;left:4px;top:13px;width:8px;height:8px;border-radius:50%;background:var(--usamedic-accent);}
+.fill{min-height:72px;background:var(--usamedic-bg-soft);border:1px dashed #bfe3f0;border-radius:var(--usamedic-radius-md);padding:12px 16px;font-size:.95rem;color:var(--usamedic-dark);outline:none;line-height:1.7;}
+.fill:empty:before{content:attr(data-ph);color:#9fb3c0;font-style:italic;}
+.fill:focus{border-color:var(--usamedic-secondary);background:#fff;box-shadow:var(--usamedic-shadow-sm);}
+
+/* grupos anidados (Organo) */
+.subgroup{margin-top:8px;display:grid;gap:14px;}
+.subfield{border-left:3px solid var(--usamedic-light);padding-left:14px;}
+.subfield h4{margin:0 0 4px;font-size:1rem;color:var(--usamedic-dark);font-weight:700;}
+.subfield .prompts li{font-size:.86rem;padding-top:3px;padding-bottom:3px;}
+
+.connector{display:flex;justify-content:center;align-items:center;height:26px;margin:-6px 0 12px;color:var(--usamedic-accent);}
+.connector svg{width:22px;height:22px;}
+
+.usamedic-footer{margin-top:56px;padding:32px 28px;background:var(--usamedic-dark);color:#fff;text-align:center;border-radius:var(--usamedic-radius-md);}
+.usamedic-footer img{width:170px;filter:brightness(0) invert(1);margin-bottom:14px;}
+.usamedic-footer .tagline{font-family:var(--usamedic-font-heading);font-weight:300;font-size:.95rem;opacity:.85;margin-bottom:8px;}
+.usamedic-footer .links a{color:var(--usamedic-secondary);text-decoration:none;font-size:.85rem;}
+.usamedic-footer .links a:hover{text-decoration:underline;}
+.save-note{text-align:center;color:var(--usamedic-medium);font-size:.78rem;margin-top:18px;}
+
+/* galeria */
+.gal-intro{margin-bottom:30px;}
+.domain{margin-bottom:14px;}
+.domain h2{font-size:1.25rem;border-bottom:2px solid var(--usamedic-light);padding-bottom:8px;margin-bottom:18px;display:flex;align-items:center;gap:10px;}
+.domain h2 .cnt{font-size:.72rem;font-weight:600;color:var(--usamedic-medium);background:var(--usamedic-light);border-radius:999px;padding:3px 10px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:16px;margin-bottom:34px;}
+.tcard{display:flex;flex-direction:column;background:#fff;border:1px solid var(--usamedic-light);border-top:4px solid var(--usamedic-primary);border-radius:var(--usamedic-radius-md);padding:18px 18px 16px;text-decoration:none;color:inherit;box-shadow:var(--usamedic-shadow-sm);transition:transform .15s,box-shadow .15s,border-color .15s;}
+.tcard:hover{transform:translateY(-3px);box-shadow:var(--usamedic-shadow-md);border-top-color:var(--usamedic-secondary);}
+.tcard h3{font-size:1.08rem;margin:0 0 6px;}
+.tcard p{margin:0 0 12px;font-size:.85rem;color:var(--usamedic-medium);flex:1;}
+.tcard .meta{display:flex;align-items:center;justify-content:space-between;}
+.tcard .fields{font-size:.72rem;font-weight:600;color:var(--usamedic-accent);text-transform:uppercase;letter-spacing:.5px;}
+.tcard .go{font-family:var(--usamedic-font-heading);font-weight:700;font-size:.82rem;color:var(--usamedic-primary);}
+
+@media (max-width:560px){.usamedic-hero h1{font-size:1.9rem;}.usamedic-topbar{padding:10px 16px;}.topbar-actions .pill{display:none;}}
+@media print{
+  body{background:#fff;}
+  .usamedic-topbar,.btn-print{position:static;box-shadow:none;}
+  .topbar-actions{display:none;}
+  .usamedic-hero,.act,.usamedic-footer{box-shadow:none;break-inside:avoid;}
+  .usamedic-hero{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .act{border:1px solid #cfe6f0;}.fill{border-style:solid;}.save-note{display:none;}
+}
+</style></head><body>
+<header class="usamedic-topbar">
+  <a class="brand" href="index.html">
+    <img src="assets/usamedic-isotipo.png" alt="USAMEDIC">
+    <div class="brand-text"><strong>USAMEDIC</strong><small>Médicos de Excelencia</small></div>
+  </a>
+  <div class="topbar-actions"><span class="pill">Plantilla · Metadata</span><button class="btn-print" onclick="window.print()">Imprimir / PDF</button></div>
+</header>
+<div class="wrap">
+  <section class="usamedic-hero">
+    <p class="eyebrow">Plantilla de estudio · Concepto: Vacuna</p>
+    <h1>Vacuna</h1>
+    <p>Los <strong>componentes</strong> dictan la biología de la respuesta inmune y las limitaciones de manejo; las <strong>indicaciones y contraindicaciones</strong> definen quién se beneficia y quién se expone a daño; el <strong>esquema</strong> traduce la inmunología en protocolo temporal preciso; los <strong>eventos adversos</strong> cierran el razonamiento riesgo-beneficio que sustenta cada decisión vacunal en la práctica clínica.</p>
+    
+    <div class="disease-input">
+      <label for="dx">Vacuna:</label>
+      <div class="field" id="dx" contenteditable="true" data-ph="Escribe el nombre de la vacuna…"></div>
+    </div>
+  </section>
+  <div class="callout">
+    <p><strong>Cómo se usa.</strong> Recorre los campos en orden. Las preguntas guía son disparadores de
+       recuerdo activo: respóndelas de memoria primero, luego verifica contra tu fuente.</p>
+    <p>Editable y autoguardado en este navegador. Usa <strong>Imprimir / PDF</strong> para exportarla llena.</p>
+  </div>
+  <div class="acts">
+  <section class="act"><div class="act-head">
+        <div class="act-num">1</div>
+        <div class="act-title"><div class="role">JUSTIFICACIÓN EPIDEMIOLÓGICA Y ESTRATÉGICA</div><h2>Importancia</h2></div>
+      </div><p class="act-essence">Ancla la vacuna en la carga de enfermedad real y en la lógica de salud pública que justifica priorizarla en el sistema peruano.</p><ul class="prompts"><li>¿Qué enfermedad previene esta vacuna, cuál es su morbimortalidad específica en Perú (grupos más afectados, regiones de alta incidencia, letalidad), y qué evidencia epidemiológica convirtió su control en prioridad sanitaria nacional?</li><li>¿Qué tipo de inmunidad genera — activa o pasiva, humoral o celular, o ambas — y cómo ese mecanismo explica la duración de la protección individual y la posibilidad de inmunidad de rebaño a nivel poblacional?</li><li>¿En qué componente del Programa Ampliado de Inmunizaciones (PAI) del MINSA se ubica esta vacuna, qué cobertura mínima se requiere para interrumpir la cadena de transmisión, y cuál es la situación actual de cobertura en el país?</li></ul><div class="fill" contenteditable="true" data-ph="Enfermedad blanco → carga epidemiológica en Perú → tipo de inmunidad generada → posición en el PAI y meta de cobertura"></div></section>
+<div class="connector"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 4v15M6 13l6 6 6-6"/></svg></div>
+<section class="act"><div class="act-head">
+        <div class="act-num">2</div>
+        <div class="act-title"><div class="role">SUSTRATO INMUNOGÉNICO Y CONSECUENCIAS PRÁCTICAS</div><h2>Componentes</h2></div>
+      </div><p class="act-essence">Explica qué contiene la vacuna y por qué la naturaleza del antígeno, los adyuvantes y los excipientes determinan la respuesta inmune, el manejo y las reacciones.</p><ul class="prompts"><li>¿El antígeno es vivo atenuado, inactivado entero, subunitario (proteína, polisacárido, conjugado) o toxoide — y qué implica cada clasificación para la magnitud y duración de la respuesta, la necesidad de refuerzos y las restricciones en inmunocomprometidos?</li><li>¿Qué adyuvante contiene (o si carece de él) y cómo ese adyuvante potencia o modula la respuesta inmune; qué conservantes (p. ej. timerosal) o excipientes proteicos (p. ej. gelatina, proteínas de huevo) son relevantes y qué tipo de hipersensibilidad o contraindicación pueden generar?</li><li>¿Cuántos serotipos, cepas o antígenos distintos incluye la formulación, qué brechas de cobertura quedan frente a la epidemiología local vigente, y cómo eso afecta la eficacia protectora poblacional real?</li></ul><div class="fill" contenteditable="true" data-ph="Tipo de antígeno → adyuvante (mecanismo) → excipientes relevantes → serotipos/cepas incluidas y brechas"></div></section>
+<div class="connector"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 4v15M6 13l6 6 6-6"/></svg></div>
+<section class="act"><div class="act-head">
+        <div class="act-num">3</div>
+        <div class="act-title"><div class="role">FORMA FARMACÉUTICA Y CADENA DE FRÍO</div><h2>Presentación</h2></div>
+      </div><p class="act-essence">Define el formato físico, la ruta de administración y las condiciones de conservación que preservan la potencia e inmunogenicidad de la vacuna.</p><ul class="prompts"><li>¿Cuál es la vía de administración (IM, SC, oral, intradérmica), el volumen exacto de la dosis y el sitio anatómico recomendado según la edad del paciente — y por qué esa combinación de ruta y sitio optimiza la absorción del antígeno y la respuesta inmune local?</li><li>¿Qué rango de temperatura exige la cadena de frío para conservar la potencia, qué ocurre biológicamente con la vacuna si se congela (para las que no deben congelarse) o si se rompe la cadena por calor, y cómo se detecta y gestiona esa ruptura en el primer nivel de atención?</li><li>¿La presentación es monodosis o multidosis, liofilizada con diluyente específico o líquida lista para usar — y qué implicaciones tiene cada formato para el tiempo de uso tras apertura, el riesgo de contaminación y la logística de vacunación masiva o en campaña?</li></ul><div class="fill" contenteditable="true" data-ph="Vía → sitio anatómico por edad → volumen → rango de cadena de frío → mono/multidosis → liofilizada o líquida"></div></section>
+<div class="connector"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 4v15M6 13l6 6 6-6"/></svg></div>
+<section class="act"><div class="act-head">
+        <div class="act-num">4</div>
+        <div class="act-title"><div class="role">POBLACIÓN OBJETIVO Y ESTRATEGIA DE PROTECCIÓN</div><h2>Indicaciones</h2></div>
+      </div><p class="act-essence">Precisa quién debe recibir la vacuna, en qué circunstancias clínicas o epidemiológicas, y cómo eso define la estrategia de protección individual y colectiva.</p><ul class="prompts"><li>¿A qué grupo etario está dirigida la indicación primaria, cuál es la ventana de edad óptima para iniciar el esquema y qué evidencia inmunológica o epidemiológica justifica ese momento de inicio en lugar de otro?</li><li>¿Existen indicaciones especiales para grupos en mayor riesgo — inmunocomprometidos, embarazadas, adultos mayores, trabajadores de salud, viajeros o contextos de brote — y cómo modifican esas condiciones la estrategia, la dosis o el tipo de vacuna a usar?</li><li>¿Esta vacuna se indica como profilaxis pre-exposición, post-exposición o ambas — y qué cambia en el esquema (número de dosis, intervalos, uso de inmunoglobulina concomitante) según el contexto de aplicación?</li></ul><div class="fill" contenteditable="true" data-ph="Grupo etario primario (ventana óptima) → condiciones de riesgo especial → tipo de profilaxis y ajustes de esquema"></div></section>
+<div class="connector"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 4v15M6 13l6 6 6-6"/></svg></div>
+<section class="act"><div class="act-head">
+        <div class="act-num">5</div>
+        <div class="act-title"><div class="role">FILTRO DE SEGURIDAD: ABSOLUTAS Y RELATIVAS</div><h2>Contraindicaciones</h2></div>
+      </div><p class="act-essence">Identifica con precisión quién no debe recibir la vacuna y por qué, distinguiendo contraindicaciones absolutas de precauciones para evitar daño iatrogénico sin negar protección innecesariamente.</p><ul class="prompts"><li>¿Cuáles son las contraindicaciones absolutas — reacción anafiláctica a dosis previa o a algún componente, inmunosupresión severa para vacunas vivas, etc. — y cuál es el mecanismo fisiopatológico que hace inadmisible la vacunación en cada caso?</li><li>¿Qué condiciones constituyen precauciones (no contraindicaciones absolutas) — enfermedad aguda moderada-grave, embarazo para vacunas específicas, trastornos neurológicos inestables — y cómo se toma la decisión clínica de vacunar o diferir en ese escenario de incertidumbre?</li><li>¿Por qué el embarazo o la inmunosupresión contraindican o no esta vacuna en particular — considerando el tipo de antígeno — y en qué categoría de seguridad en el embarazo la clasifica el CDC u OMS, con qué justificación?</li></ul><div class="fill" contenteditable="true" data-ph="Absolutas (mecanismo) → precauciones/relativas (manejo de decisión) → embarazo e inmunosupresión (categoría y fundamento)"></div></section>
+<div class="connector"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 4v15M6 13l6 6 6-6"/></svg></div>
+<section class="act"><div class="act-head">
+        <div class="act-num">6</div>
+        <div class="act-title"><div class="role">PROTOCOLO TEMPORAL: DOSIS, INTERVALOS Y REFUERZOS</div><h2>Esquema</h2></div>
+      </div><p class="act-essence">Ordena con precisión el número de dosis, los intervalos mínimos y los refuerzos que garantizan seroconversión primaria e inmunidad duradera, y da respuesta al esquema incompleto.</p><ul class="prompts"><li>¿Cuántas dosis componen la serie primaria, en qué edades o intervalos mínimos entre dosis se aplican, y por qué ese número y esa cadencia son necesarios desde la biología de la respuesta inmune adaptativa (expansión clonal, células de memoria, seroconversión)?</li><li>¿Cuándo corresponde aplicar dosis de refuerzo (booster), con qué periodicidad o bajo qué criterio serológico, y qué evidencia de duración de la inmunidad o de waning sustenta ese intervalo?</li><li>¿Qué indica la evidencia y las guías del MINSA/CDC sobre el manejo del esquema interrumpido: se reinicia la serie desde cero o se continúa a partir de la última dosis válida, y cuál es la regla operativa que aplica un médico en el primer nivel de atención?</li></ul><div class="fill" contenteditable="true" data-ph="Serie primaria (n.° dosis, edades o intervalos mínimos) → refuerzo (cuándo y por qué) → esquema incompleto (continúa o reinicia)"></div></section>
+<div class="connector"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 4v15M6 13l6 6 6-6"/></svg></div>
+<section class="act"><div class="act-head">
+        <div class="act-num">7</div>
+        <div class="act-title"><div class="role">PERFIL RIESGO-BENEFICIO Y VIGILANCIA POST-VACUNAL</div><h2>Eventos adversos</h2></div>
+      </div><p class="act-essence">Clasifica con precisión las reacciones esperadas y las graves para el counseling informado, la vigilancia activa y el manejo inmediato en el punto de vacunación.</p><ul class="prompts"><li>¿Cuáles son los eventos adversos locales (dolor, eritema, induración) y sistémicos frecuentes (fiebre, mialgias, fatiga) con su frecuencia aproximada (&gt; 1/10 o &gt; 1/100), cuál es el mecanismo inmunológico que los produce y qué mensaje claro entrega al paciente para el counseling previo?</li><li>¿Qué eventos supuestamente atribuibles a la vacunación o inmunización (ESAVI) graves o raros se han documentado — trombocitopenia, anafilaxia, síndrome de Guillain-Barré, miocarditis, etc. — con qué frecuencia por dosis aplicadas, y cómo y a quién se notifican en el sistema de farmacovigilancia peruano (DIGEMID/ESAVI)?</li><li>¿Cómo diferenciar clínicamente una reacción vasovagal o alérgica leve de una anafilaxia post-vacunal en los primeros 30 minutos de observación, y cuál es el protocolo de manejo inmediato — incluyendo dosis y vía de epinefrina — que debe estar disponible en todo punto de vacunación?</li></ul><div class="fill" contenteditable="true" data-ph="Locales/sistémicos frecuentes (mecanismo + counseling) → ESAVI graves (frecuencia + notificación DIGEMID) → diagnóstico diferencial y manejo de anafilaxia"></div></section>
+  </div>
+  <p class="save-note" id="saveNote">Los cambios se guardan automáticamente en este navegador.</p>
+  <footer class="usamedic-footer">
+    <img src="assets/usamedic-logo-stacked.png" alt="USAMEDIC · Médicos de Excelencia">
+    <div class="tagline">Preparación Residentado Médico · ENAM · Internado</div>
+    <div class="links">
+      <a href="https://www.usamedic.pe" target="_blank" rel="noopener">usamedic.pe</a> ·
+      <a href="https://instagram.com/usamedic" target="_blank" rel="noopener">Instagram</a> ·
+      <a href="https://youtube.com/usamedic" target="_blank" rel="noopener">YouTube</a>
+    </div>
+  </footer>
+</div>
+<script>
+(function(){
+  var KEY='usamedic-tpl-vacuna';
+  var fields=[document.getElementById('dx')].concat(Array.prototype.slice.call(document.querySelectorAll('.fill')));
+  var saved; try{saved=JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){saved={};}
+  fields.forEach(function(f,i){
+    if(saved['f'+i]!=null) f.innerHTML=saved['f'+i];
+    f.addEventListener('input',function(){
+      var data={}; fields.forEach(function(g,j){data['f'+j]=g.innerHTML;});
+      try{localStorage.setItem(KEY,JSON.stringify(data));}catch(e){}
+      document.getElementById('saveNote').textContent='Guardado ✓ — '+new Date().toLocaleTimeString();
+    });
+  });
+})();
+</script>
+</body></html>

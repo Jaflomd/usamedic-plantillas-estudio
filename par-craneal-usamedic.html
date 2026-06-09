@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Par craneal · Plantilla USAMEDIC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --usamedic-primary:#2A7DE1;--usamedic-secondary:#1DCAD3;--usamedic-accent:#1BACE4;
+  --usamedic-dark:#1a2b3c;--usamedic-medium:#5a6b7c;--usamedic-light:#eaf6fb;
+  --usamedic-bg-soft:#f5fbfd;--usamedic-white:#ffffff;
+  --usamedic-gradient-primary:linear-gradient(135deg,#1DCAD3 0%,#2A7DE1 100%);
+  --usamedic-gradient-hero:linear-gradient(135deg,#1DCAD3 0%,#1BACE4 50%,#2A7DE1 100%);
+  --usamedic-font-heading:'Montserrat',system-ui,sans-serif;
+  --usamedic-font-body:'Poppins',system-ui,sans-serif;
+  --usamedic-radius-sm:6px;--usamedic-radius-md:14px;--usamedic-radius-lg:24px;
+  --usamedic-shadow-sm:0 2px 4px rgba(42,125,225,0.08);
+  --usamedic-shadow-md:0 8px 24px rgba(42,125,225,0.12);
+  --usamedic-shadow-lg:0 16px 48px rgba(42,125,225,0.18);
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:var(--usamedic-font-body);color:var(--usamedic-dark);background:var(--usamedic-bg-soft);line-height:1.6;}
+h1,h2,h3,h4{font-family:var(--usamedic-font-heading);color:var(--usamedic-primary);font-weight:800;letter-spacing:-0.01em;margin:0 0 0.5em;}
+a{color:var(--usamedic-primary);}
+
+.usamedic-topbar{background:var(--usamedic-gradient-primary);color:#fff;padding:12px 28px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--usamedic-shadow-md);position:sticky;top:0;z-index:100;}
+.usamedic-topbar .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;}
+.usamedic-topbar .brand img{height:42px;width:auto;filter:brightness(0) invert(1);}
+.usamedic-topbar .brand-text{line-height:1.05;}
+.usamedic-topbar .brand-text strong{font-family:var(--usamedic-font-heading);font-weight:800;font-size:1.05rem;letter-spacing:.5px;display:block;}
+.usamedic-topbar .brand-text small{font-weight:300;font-size:.78rem;opacity:.95;}
+.topbar-actions{display:flex;align-items:center;gap:10px;}
+.pill{background:rgba(255,255,255,.18);color:#fff;font-size:.72rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:6px 12px;border-radius:999px;text-decoration:none;}
+.pill:hover{background:rgba(255,255,255,.28);}
+.btn-print{background:#fff;color:var(--usamedic-primary);border:none;cursor:pointer;font-family:var(--usamedic-font-body);font-weight:600;font-size:.85rem;padding:8px 16px;border-radius:var(--usamedic-radius-sm);transition:transform .15s,box-shadow .15s;}
+.btn-print:hover{transform:translateY(-1px);box-shadow:var(--usamedic-shadow-md);}
+
+.wrap{max-width:920px;margin:0 auto;padding:28px 20px 80px;}
+
+.usamedic-hero{background:var(--usamedic-gradient-hero);color:#fff;padding:44px 36px;border-radius:var(--usamedic-radius-lg);margin-bottom:28px;box-shadow:var(--usamedic-shadow-lg);}
+.usamedic-hero .eyebrow{text-transform:uppercase;font-size:.74rem;font-weight:600;letter-spacing:2px;opacity:.92;margin:0 0 8px;}
+.usamedic-hero h1{color:#fff;font-size:2.5rem;margin:0 0 .25em;}
+.usamedic-hero h1 .acro{font-weight:800;letter-spacing:.06em;}
+.usamedic-hero p{margin:0;font-weight:300;font-size:1.06rem;max-width:62ch;opacity:.97;}
+.dets-key{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 0;}
+.dets-key span{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:5px 13px;font-size:.8rem;font-weight:500;}
+.dets-key span b{font-family:var(--usamedic-font-heading);font-weight:800;}
+.disease-input{margin-top:20px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+.disease-input label{font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:1px;opacity:.95;}
+.disease-input .field{flex:1;min-width:240px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.4);border-radius:var(--usamedic-radius-sm);color:#fff;font-family:var(--usamedic-font-heading);font-weight:700;font-size:1.15rem;padding:10px 16px;outline:none;}
+.disease-input .field:empty:before{content:attr(data-ph);color:rgba(255,255,255,.6);font-weight:400;}
+.disease-input .field:focus{background:rgba(255,255,255,.26);}
+
+.callout{background:var(--usamedic-bg-soft);border-left:4px solid var(--usamedic-secondary);border-radius:var(--usamedic-radius-md);padding:18px 22px;margin-bottom:30px;box-shadow:var(--usamedic-shadow-sm);}
+.callout strong{color:var(--usamedic-primary);}
+.callout p{margin:.3em 0;font-size:.95rem;color:var(--usamedic-medium);}
+
+.acts{display:flex;flex-direction:column;gap:0;}
+.act{position:relative;background:#fff;border-radius:var(--usamedic-radius-lg);padding:26px 28px 22px;margin-bottom:18px;box-shadow:var(--usamedic-shadow-sm);border:1px solid var(--usamedic-light);border-top:5px solid var(--usamedic-primary);}
+.act-head{display:flex;align-items:flex-start;gap:16px;margin-bottom:6px;}
+.act-num{flex:none;width:48px;height:48px;border-radius:14px;background:var(--usamedic-gradient-primary);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--usamedic-font-heading);font-weight:800;font-size:1.4rem;box-shadow:var(--usamedic-shadow-sm);}
+.act-title h2{margin:0;font-size:1.35rem;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;}
+.act-title .role{font-size:.74rem;text-transform:uppercase;letter-spacing:1.5px;font-weight:600;color:var(--usamedic-secondary);}
+.act-title h2 .alt{font-size:.92rem;font-weight:400;color:var(--usamedic-medium);font-family:var(--usamedic-font-body);}
+.act-essence{color:var(--usamedic-medium);font-size:.98rem;margin:4px 0 16px;font-style:italic;}
+.prompts{list-style:none;padding:0;margin:0 0 14px;}
+.prompts li{position:relative;padding:5px 0 5px 24px;font-size:.92rem;color:var(--usamedic-dark);}
+.prompts li:before{content:"";position:absolute;left:4px;top:13px;width:8px;height:8px;border-radius:50%;background:var(--usamedic-accent);}
+.fill{min-height:72px;background:var(--usamedic-bg-soft);border:1px dashed #bfe3f0;border-radius:var(--usamedic-radius-md);padding:12px 16px;font-size:.95rem;color:var(--usamedic-dark);outline:none;line-height:1.7;}
+.fill:empty:before{content:attr(data-ph);color:#9fb3c0;font-style:italic;}
+.fill:focus{border-color:var(--usamedic-secondary);background:#fff;box-shadow:var(--usamedic-shadow-sm);}
+
+/* grupos anidados (Organo) */
+.subgroup{margin-top:8px;display:grid;gap:14px;}
+.subfield{border-left:3px solid var(--usamedic-light);padding-left:14px;}
+.subfield h4{margin:0 0 4px;font-size:1rem;color:var(--usamedic-dark);font-weight:700;}
+.subfield .prompts li{font-size:.86rem;padding-top:3px;padding-bottom:3px;}
+
+.connector{display:flex;justify-content:center;align-items:center;height:26px;margin:-6px 0 12px;color:var(--usamedic-accent);}
+.connector svg{width:22px;height:22px;}
+
+.usamedic-footer{margin-top:56px;padding:32px 28px;background:var(--usamedic-dark);color:#fff;text-align:center;border-radius:var(--usamedic-radius-md);}
+.usamedic-footer img{width:170px;filter:brightness(0) invert(1);margin-bottom:14px;}
+.usamedic-footer .tagline{font-family:var(--usamedic-font-heading);font-weight:300;font-size:.95rem;opacity:.85;margin-bottom:8px;}
+.usamedic-footer .links a{color:var(--usamedic-secondary);text-decoration:none;font-size:.85rem;}
+.usamedic-footer .links a:hover{text-decoration:underline;}
+.save-note{text-align:center;color:var(--usamedic-medium);font-size:.78rem;margin-top:18px;}
+
+/* galeria */
+.gal-intro{margin-bottom:30px;}
+.domain{margin-bottom:14px;}
+.domain h2{font-size:1.25rem;border-bottom:2px solid var(--usamedic-light);padding-bottom:8px;margin-bottom:18px;display:flex;align-items:center;gap:10px;}
+.domain h2 .cnt{font-size:.72rem;font-weight:600;color:var(--usamedic-medium);background:var(--usamedic-light);border-radius:999px;padding:3px 10px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:16px;margin-bottom:34px;}
+.tcard{display:flex;flex-direction:column;background:#fff;border:1px solid var(--usamedic-light);border-top:4px solid var(--usamedic-primary);border-radius:var(--usamedic-radius-md);padding:18px 18px 16px;text-decoration:none;color:inherit;box-shadow:var(--usamedic-shadow-sm);transition:transform .15s,box-shadow .15s,border-color .15s;}
+.tcard:hover{transform:translateY(-3px);box-shadow:var(--usamedic-shadow-md);border-top-color:var(--usamedic-secondary);}
+.tcard h3{font-size:1.08rem;margin:0 0 6px;}
+.tcard p{margin:0 0 12px;font-size:.85rem;color:var(--usamedic-medium);flex:1;}
+.tcard .meta{display:flex;align-items:center;justify-content:space-between;}
+.tcard .fields{font-size:.72rem;font-weight:600;color:var(--usamedic-accent);text-transform:uppercase;letter-spacing:.5px;}
+.tcard .go{font-family:var(--usamedic-font-heading);font-weight:700;font-size:.82rem;color:var(--usamedic-primary);}
+
+@media (max-width:560px){.usamedic-hero h1{font-size:1.9rem;}.usamedic-topbar{padding:10px 16px;}.topbar-actions .pill{display:none;}}
+@media print{
+  body{background:#fff;}
+  .usamedic-topbar,.btn-print{position:static;box-shadow:none;}
+  .topbar-actions{display:none;}
+  .usamedic-hero,.act,.usamedic-footer{box-shadow:none;break-inside:avoid;}
+  .usamedic-hero{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .act{border:1px solid #cfe6f0;}.fill{border-style:solid;}.save-note{display:none;}
+}
+</style></head><body>
+<header class="usamedic-topbar">
+  <a class="brand" href="index.html">
+    <img src="assets/usamedic-isotipo.png" alt="USAMEDIC">
+    <div class="brand-text"><strong>USAMEDIC</strong><small>Médicos de Excelencia</small></div>
+  </a>
+  <div class="topbar-actions"><span class="pill">Plantilla · Metadata</span><button class="btn-print" onclick="window.print()">Imprimir / PDF</button></div>
+</header>
+<div class="wrap">
+  <section class="usamedic-hero">
+    <p class="eyebrow">Plantilla de estudio · Concepto: Par craneal</p>
+    <h1>Par craneal</h1>
+    <p>El <strong>tipo</strong> define qué fibras lleva el par y qué puede fallar; el <strong>origen</strong> ancla la lesión en el neuroeje y predice los signos acompañantes; el <strong>sitio de salida</strong> mapea la vulnerabilidad anatómica y los síndromes de vecindad; la <strong>función</strong> cierra el circuito: lo que el par hace en condiciones normales es exactamente lo que desaparece cuando se lesiona.</p>
+    
+    <div class="disease-input">
+      <label for="dx">Par craneal:</label>
+      <div class="field" id="dx" contenteditable="true" data-ph="Escribe el número romano o nombre del par craneal…"></div>
+    </div>
+  </section>
+  <div class="callout">
+    <p><strong>Cómo se usa.</strong> Recorre los campos en orden. Las preguntas guía son disparadores de
+       recuerdo activo: respóndelas de memoria primero, luego verifica contra tu fuente.</p>
+    <p>Editable y autoguardado en este navegador. Usa <strong>Imprimir / PDF</strong> para exportarla llena.</p>
+  </div>
+  <div class="acts">
+  <section class="act"><div class="act-head">
+        <div class="act-num">1</div>
+        <div class="act-title"><div class="role">IDENTIDAD FUNCIONAL</div><h2>Tipo</h2></div>
+      </div><p class="act-essence">Clasifica las fibras del par (sensitiva, motora, mixta, parasimpática) y determina qué déficit específico produce cada componente al fallar.</p><ul class="prompts"><li>¿Qué combinación de fibras tiene este par — sensitiva general, sensitiva especial, motora somática, visceral aferente o eferente parasimpática — y qué déficit clínico distinto produce la pérdida de cada componente de forma aislada?</li><li>Si el par es mixto o tiene componente autonómico, ¿cuál fibra se afecta primero en una compresión extrínseca de progresión lenta (p. ej., aneurisma o tumor) versus una isquemia aguda del nervio, y cuál es el mecanismo fisiopatológico que explica esa diferencia?</li><li>¿Cómo modifica la presencia de fibras parasimpáticas el diagnóstico diferencial de su parálisis? Define el dato semiológico clave que confirma o descarta compromiso autonómico en el examen a pie de cama.</li></ul><div class="fill" contenteditable="true" data-ph="Sensitivo / Motor / Mixto / Parasimpático → qué déficit produce cada fibra al fallar"></div></section>
+<div class="connector"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 4v15M6 13l6 6 6-6"/></svg></div>
+<section class="act"><div class="act-head">
+        <div class="act-num">2</div>
+        <div class="act-title"><div class="role">ANCLA NEUROANATÓMICA</div><h2>Origen</h2></div>
+      </div><p class="act-essence">Ubica el núcleo motor o el ganglio sensitivo en el neuroeje y permite localizar topográficamente la lesión — nuclear versus infranuclear — con sus correlatos clínicos y vasculares.</p><ul class="prompts"><li>¿En qué nivel del neuroeje nace este par — mesencéfalo, protuberancia, bulbo o fuera del tronco — y qué vías largas (piramidal, espinocerebelosa, lemnisco medial, simpática) cruzan ese mismo nivel, de modo que su lesión produciría un síndrome alterno reconocible?</li><li>¿Cuál es el núcleo motor principal o el ganglio sensitivo de este par, y cómo distingues clínicamente una lesión nuclear (con posible afectación de fibras internucleares o fasciculaciones) de una lesión del nervio periférico distal al tronco?</li><li>¿Qué territorio vascular irriga el núcleo de este par, qué síndrome del tronco encefálico resulta de su oclusión y cuáles son los tres signos cardinales que permiten reconocerlo en urgencias?</li></ul><div class="fill" contenteditable="true" data-ph="Núcleo / ganglio → nivel (mesencéfalo / protuberancia / bulbo) → síndrome alterno y vascularización"></div></section>
+<div class="connector"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 4v15M6 13l6 6 6-6"/></svg></div>
+<section class="act"><div class="act-head">
+        <div class="act-num">3</div>
+        <div class="act-title"><div class="role">PUERTA ANATÓMICA</div><h2>Sitio de salida</h2></div>
+      </div><p class="act-essence">Traza el trayecto desde el cráneo hasta el órgano diana, identificando los forámenes, compartimentos y estructuras vecinas que concentran la vulnerabilidad compresiva, traumática e infiltrativa.</p><ul class="prompts"><li>¿Por qué foramen o fisura abandona este par la cavidad craneal, qué otras estructuras neurovasculares comparten ese orificio, y qué síndrome de parálisis combinada —con nombre epónimo si existe— resulta de una lesión en ese punto?</li><li>¿Qué relaciones anatómicas críticas tiene el par en su trayecto extracraneal — seno cavernoso, ángulo pontocerebeloso, canal óptico, canal facial, parótida, órbita u otra — y qué patología propia de cada compartimento explica los síndromes de vecindad más frecuentes en el ENAM?</li><li>¿En qué escenario clínico de alta frecuencia en urgencias o cirugía (fractura de base de cráneo, aneurisma intracraneal, herniación transtentorial, tumor del ángulo o paratiroidismo) es más probable la lesión en ese sitio de salida específico, cuál es el signo centinela y cuál es el mecanismo fisiopatológico directo?</li></ul><div class="fill" contenteditable="true" data-ph="Foramen / fisura / canal → estructuras vecinas en riesgo → síndrome de vecindad"></div></section>
+<div class="connector"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 4v15M6 13l6 6 6-6"/></svg></div>
+<section class="act"><div class="act-head">
+        <div class="act-num">4</div>
+        <div class="act-title"><div class="role">EXPRESIÓN CLÍNICA</div><h2>Función</h2></div>
+      </div><p class="act-essence">Define la acción normal del par en cada una de sus fibras y, por inversión directa, el déficit exacto que produce su parálisis — el puente entre anatomía y exploración neurológica.</p><ul class="prompts"><li>¿Cuál es el signo o síntoma patognomónico de la parálisis completa de este par y qué hallazgo semiológico lo diferencia de la parálisis de un par adyacente con presentación superficialmente similar?</li><li>¿Cómo exploras específicamente cada componente funcional de este par en el examen neurológico estándar, y qué maniobra o prueba distingue una lesión de neurona motora superior (central) de una lesión de neurona motora inferior (periférica) en este par?</li><li>¿Qué función de este par — motora, sensitiva, refleja o autónoma — se evalúa de forma prioritaria en urgencias, qué hallazgo indica progresión o compromiso grave inminente, y cuál es el umbral para actuación inmediata?</li></ul><div class="fill" contenteditable="true" data-ph="Movimiento / sensación / reflejo / secreción → déficit exacto en parálisis completa"></div></section>
+  </div>
+  <p class="save-note" id="saveNote">Los cambios se guardan automáticamente en este navegador.</p>
+  <footer class="usamedic-footer">
+    <img src="assets/usamedic-logo-stacked.png" alt="USAMEDIC · Médicos de Excelencia">
+    <div class="tagline">Preparación Residentado Médico · ENAM · Internado</div>
+    <div class="links">
+      <a href="https://www.usamedic.pe" target="_blank" rel="noopener">usamedic.pe</a> ·
+      <a href="https://instagram.com/usamedic" target="_blank" rel="noopener">Instagram</a> ·
+      <a href="https://youtube.com/usamedic" target="_blank" rel="noopener">YouTube</a>
+    </div>
+  </footer>
+</div>
+<script>
+(function(){
+  var KEY='usamedic-tpl-par-craneal';
+  var fields=[document.getElementById('dx')].concat(Array.prototype.slice.call(document.querySelectorAll('.fill')));
+  var saved; try{saved=JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){saved={};}
+  fields.forEach(function(f,i){
+    if(saved['f'+i]!=null) f.innerHTML=saved['f'+i];
+    f.addEventListener('input',function(){
+      var data={}; fields.forEach(function(g,j){data['f'+j]=g.innerHTML;});
+      try{localStorage.setItem(KEY,JSON.stringify(data));}catch(e){}
+      document.getElementById('saveNote').textContent='Guardado ✓ — '+new Date().toLocaleTimeString();
+    });
+  });
+})();
+</script>
+</body></html>

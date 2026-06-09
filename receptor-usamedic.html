@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Receptor · Plantilla USAMEDIC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --usamedic-primary:#2A7DE1;--usamedic-secondary:#1DCAD3;--usamedic-accent:#1BACE4;
+  --usamedic-dark:#1a2b3c;--usamedic-medium:#5a6b7c;--usamedic-light:#eaf6fb;
+  --usamedic-bg-soft:#f5fbfd;--usamedic-white:#ffffff;
+  --usamedic-gradient-primary:linear-gradient(135deg,#1DCAD3 0%,#2A7DE1 100%);
+  --usamedic-gradient-hero:linear-gradient(135deg,#1DCAD3 0%,#1BACE4 50%,#2A7DE1 100%);
+  --usamedic-font-heading:'Montserrat',system-ui,sans-serif;
+  --usamedic-font-body:'Poppins',system-ui,sans-serif;
+  --usamedic-radius-sm:6px;--usamedic-radius-md:14px;--usamedic-radius-lg:24px;
+  --usamedic-shadow-sm:0 2px 4px rgba(42,125,225,0.08);
+  --usamedic-shadow-md:0 8px 24px rgba(42,125,225,0.12);
+  --usamedic-shadow-lg:0 16px 48px rgba(42,125,225,0.18);
+}
+*{box-sizing:border-box;}
+body{margin:0;font-family:var(--usamedic-font-body);color:var(--usamedic-dark);background:var(--usamedic-bg-soft);line-height:1.6;}
+h1,h2,h3,h4{font-family:var(--usamedic-font-heading);color:var(--usamedic-primary);font-weight:800;letter-spacing:-0.01em;margin:0 0 0.5em;}
+a{color:var(--usamedic-primary);}
+
+.usamedic-topbar{background:var(--usamedic-gradient-primary);color:#fff;padding:12px 28px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--usamedic-shadow-md);position:sticky;top:0;z-index:100;}
+.usamedic-topbar .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;}
+.usamedic-topbar .brand img{height:42px;width:auto;filter:brightness(0) invert(1);}
+.usamedic-topbar .brand-text{line-height:1.05;}
+.usamedic-topbar .brand-text strong{font-family:var(--usamedic-font-heading);font-weight:800;font-size:1.05rem;letter-spacing:.5px;display:block;}
+.usamedic-topbar .brand-text small{font-weight:300;font-size:.78rem;opacity:.95;}
+.topbar-actions{display:flex;align-items:center;gap:10px;}
+.pill{background:rgba(255,255,255,.18);color:#fff;font-size:.72rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:6px 12px;border-radius:999px;text-decoration:none;}
+.pill:hover{background:rgba(255,255,255,.28);}
+.btn-print{background:#fff;color:var(--usamedic-primary);border:none;cursor:pointer;font-family:var(--usamedic-font-body);font-weight:600;font-size:.85rem;padding:8px 16px;border-radius:var(--usamedic-radius-sm);transition:transform .15s,box-shadow .15s;}
+.btn-print:hover{transform:translateY(-1px);box-shadow:var(--usamedic-shadow-md);}
+
+.wrap{max-width:920px;margin:0 auto;padding:28px 20px 80px;}
+
+.usamedic-hero{background:var(--usamedic-gradient-hero);color:#fff;padding:44px 36px;border-radius:var(--usamedic-radius-lg);margin-bottom:28px;box-shadow:var(--usamedic-shadow-lg);}
+.usamedic-hero .eyebrow{text-transform:uppercase;font-size:.74rem;font-weight:600;letter-spacing:2px;opacity:.92;margin:0 0 8px;}
+.usamedic-hero h1{color:#fff;font-size:2.5rem;margin:0 0 .25em;}
+.usamedic-hero h1 .acro{font-weight:800;letter-spacing:.06em;}
+.usamedic-hero p{margin:0;font-weight:300;font-size:1.06rem;max-width:62ch;opacity:.97;}
+.dets-key{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 0;}
+.dets-key span{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:5px 13px;font-size:.8rem;font-weight:500;}
+.dets-key span b{font-family:var(--usamedic-font-heading);font-weight:800;}
+.disease-input{margin-top:20px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+.disease-input label{font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:1px;opacity:.95;}
+.disease-input .field{flex:1;min-width:240px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.4);border-radius:var(--usamedic-radius-sm);color:#fff;font-family:var(--usamedic-font-heading);font-weight:700;font-size:1.15rem;padding:10px 16px;outline:none;}
+.disease-input .field:empty:before{content:attr(data-ph);color:rgba(255,255,255,.6);font-weight:400;}
+.disease-input .field:focus{background:rgba(255,255,255,.26);}
+
+.callout{background:var(--usamedic-bg-soft);border-left:4px solid var(--usamedic-secondary);border-radius:var(--usamedic-radius-md);padding:18px 22px;margin-bottom:30px;box-shadow:var(--usamedic-shadow-sm);}
+.callout strong{color:var(--usamedic-primary);}
+.callout p{margin:.3em 0;font-size:.95rem;color:var(--usamedic-medium);}
+
+.acts{display:flex;flex-direction:column;gap:0;}
+.act{position:relative;background:#fff;border-radius:var(--usamedic-radius-lg);padding:26px 28px 22px;margin-bottom:18px;box-shadow:var(--usamedic-shadow-sm);border:1px solid var(--usamedic-light);border-top:5px solid var(--usamedic-primary);}
+.act-head{display:flex;align-items:flex-start;gap:16px;margin-bottom:6px;}
+.act-num{flex:none;width:48px;height:48px;border-radius:14px;background:var(--usamedic-gradient-primary);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--usamedic-font-heading);font-weight:800;font-size:1.4rem;box-shadow:var(--usamedic-shadow-sm);}
+.act-title h2{margin:0;font-size:1.35rem;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;}
+.act-title .role{font-size:.74rem;text-transform:uppercase;letter-spacing:1.5px;font-weight:600;color:var(--usamedic-secondary);}
+.act-title h2 .alt{font-size:.92rem;font-weight:400;color:var(--usamedic-medium);font-family:var(--usamedic-font-body);}
+.act-essence{color:var(--usamedic-medium);font-size:.98rem;margin:4px 0 16px;font-style:italic;}
+.prompts{list-style:none;padding:0;margin:0 0 14px;}
+.prompts li{position:relative;padding:5px 0 5px 24px;font-size:.92rem;color:var(--usamedic-dark);}
+.prompts li:before{content:"";position:absolute;left:4px;top:13px;width:8px;height:8px;border-radius:50%;background:var(--usamedic-accent);}
+.fill{min-height:72px;background:var(--usamedic-bg-soft);border:1px dashed #bfe3f0;border-radius:var(--usamedic-radius-md);padding:12px 16px;font-size:.95rem;color:var(--usamedic-dark);outline:none;line-height:1.7;}
+.fill:empty:before{content:attr(data-ph);color:#9fb3c0;font-style:italic;}
+.fill:focus{border-color:var(--usamedic-secondary);background:#fff;box-shadow:var(--usamedic-shadow-sm);}
+
+/* grupos anidados (Organo) */
+.subgroup{margin-top:8px;display:grid;gap:14px;}
+.subfield{border-left:3px solid var(--usamedic-light);padding-left:14px;}
+.subfield h4{margin:0 0 4px;font-size:1rem;color:var(--usamedic-dark);font-weight:700;}
+.subfield .prompts li{font-size:.86rem;padding-top:3px;padding-bottom:3px;}
+
+.connector{display:flex;justify-content:center;align-items:center;height:26px;margin:-6px 0 12px;color:var(--usamedic-accent);}
+.connector svg{width:22px;height:22px;}
+
+.usamedic-footer{margin-top:56px;padding:32px 28px;background:var(--usamedic-dark);color:#fff;text-align:center;border-radius:var(--usamedic-radius-md);}
+.usamedic-footer img{width:170px;filter:brightness(0) invert(1);margin-bottom:14px;}
+.usamedic-footer .tagline{font-family:var(--usamedic-font-heading);font-weight:300;font-size:.95rem;opacity:.85;margin-bottom:8px;}
+.usamedic-footer .links a{color:var(--usamedic-secondary);text-decoration:none;font-size:.85rem;}
+.usamedic-footer .links a:hover{text-decoration:underline;}
+.save-note{text-align:center;color:var(--usamedic-medium);font-size:.78rem;margin-top:18px;}
+
+/* galeria */
+.gal-intro{margin-bottom:30px;}
+.domain{margin-bottom:14px;}
+.domain h2{font-size:1.25rem;border-bottom:2px solid var(--usamedic-light);padding-bottom:8px;margin-bottom:18px;display:flex;align-items:center;gap:10px;}
+.domain h2 .cnt{font-size:.72rem;font-weight:600;color:var(--usamedic-medium);background:var(--usamedic-light);border-radius:999px;padding:3px 10px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:16px;margin-bottom:34px;}
+.tcard{display:flex;flex-direction:column;background:#fff;border:1px solid var(--usamedic-light);border-top:4px solid var(--usamedic-primary);border-radius:var(--usamedic-radius-md);padding:18px 18px 16px;text-decoration:none;color:inherit;box-shadow:var(--usamedic-shadow-sm);transition:transform .15s,box-shadow .15s,border-color .15s;}
+.tcard:hover{transform:translateY(-3px);box-shadow:var(--usamedic-shadow-md);border-top-color:var(--usamedic-secondary);}
+.tcard h3{font-size:1.08rem;margin:0 0 6px;}
+.tcard p{margin:0 0 12px;font-size:.85rem;color:var(--usamedic-medium);flex:1;}
+.tcard .meta{display:flex;align-items:center;justify-content:space-between;}
+.tcard .fields{font-size:.72rem;font-weight:600;color:var(--usamedic-accent);text-transform:uppercase;letter-spacing:.5px;}
+.tcard .go{font-family:var(--usamedic-font-heading);font-weight:700;font-size:.82rem;color:var(--usamedic-primary);}
+
+@media (max-width:560px){.usamedic-hero h1{font-size:1.9rem;}.usamedic-topbar{padding:10px 16px;}.topbar-actions .pill{display:none;}}
+@media print{
+  body{background:#fff;}
+  .usamedic-topbar,.btn-print{position:static;box-shadow:none;}
+  .topbar-actions{display:none;}
+  .usamedic-hero,.act,.usamedic-footer{box-shadow:none;break-inside:avoid;}
+  .usamedic-hero{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .act{border:1px solid #cfe6f0;}.fill{border-style:solid;}.save-note{display:none;}
+}
+</style></head><body>
+<header class="usamedic-topbar">
+  <a class="brand" href="index.html">
+    <img src="assets/usamedic-isotipo.png" alt="USAMEDIC">
+    <div class="brand-text"><strong>USAMEDIC</strong><small>Médicos de Excelencia</small></div>
+  </a>
+  <div class="topbar-actions"><span class="pill">Plantilla · Metadata</span><button class="btn-print" onclick="window.print()">Imprimir / PDF</button></div>
+</header>
+<div class="wrap">
+  <section class="usamedic-hero">
+    <p class="eyebrow">Plantilla de estudio · Concepto: Receptor</p>
+    <h1>Receptor</h1>
+    <p>La <strong>molécula diana</strong> revela qué se une y con qué selectividad; el <strong>tipo</strong> predice la velocidad, el segundo mensajero y la amplitud de la señal; el <strong>sitio</strong> ancla todo en el órgano y anticipa cada efecto terapéutico y adverso. <em>Sin esta cadena, los fármacos son nombres sin lógica — con ella, cada pregunta del ENAM se convierte en consecuencia predecible.</em></p>
+    
+    <div class="disease-input">
+      <label for="dx">Receptor:</label>
+      <div class="field" id="dx" contenteditable="true" data-ph="Escribe el receptor…"></div>
+    </div>
+  </section>
+  <div class="callout">
+    <p><strong>Cómo se usa.</strong> Recorre los campos en orden. Las preguntas guía son disparadores de
+       recuerdo activo: respóndelas de memoria primero, luego verifica contra tu fuente.</p>
+    <p>Editable y autoguardado en este navegador. Usa <strong>Imprimir / PDF</strong> para exportarla llena.</p>
+  </div>
+  <div class="acts">
+  <section class="act"><div class="act-head">
+        <div class="act-num">1</div>
+        <div class="act-title"><div class="role">BLANCO MOLECULAR Y SELECTIVIDAD</div><h2>Molécula diana</h2></div>
+      </div><p class="act-essence">Define el ligando endógeno que activa el receptor, la característica estructural que determina su afinidad y selectividad, y cómo los fármacos explotan o bloquean ese enlace para modificar la respuesta biológica.</p><ul class="prompts"><li>¿Cuál es el ligando endógeno de este receptor, qué rasgo estructural le otorga afinidad selectiva sobre receptores similares, y cómo un agonista completo difiere de un agonista parcial en la respuesta máxima que puede alcanzar aunque ambos ocupen el mismo sitio?</li><li>Si ocurre regulación a la baja del receptor por exposición crónica a su agonista, ¿cómo cambia la curva dosis-respuesta, qué ajuste de dosis anticipa el clínico y en qué situación clínica concreta ese fenómeno es crítico para el manejo?</li><li>Cuando un antagonista competitivo y un antagonista no competitivo se usan sobre el mismo receptor, ¿cómo distinguir sus curvas dosis-respuesta en el ENAM y qué consecuencia práctica tiene esa diferencia al intentar revertir el efecto con dosis crecientes del agonista?</li></ul><div class="fill" contenteditable="true" data-ph="Ligando endógeno → rasgo estructural de afinidad → agonista / antagonista → implicación de dosis"></div></section>
+<div class="connector"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 4v15M6 13l6 6 6-6"/></svg></div>
+<section class="act"><div class="act-head">
+        <div class="act-num">2</div>
+        <div class="act-title"><div class="role">MECANISMO TRANSDUCTOR Y CINÉTICA DE SEÑAL</div><h2>Tipo</h2></div>
+      </div><p class="act-essence">Clasifica el receptor en su familia funcional, identifica el transductor (canal, proteína G, enzima, factor nuclear) y deduce la latencia, el segundo mensajero y la amplitud de la señal, que son los determinantes del perfil farmacológico y de los errores más frecuentes en el ENAM.</p><ul class="prompts"><li>¿A qué familia pertenece este receptor (ionotrópico, GPCR, con actividad enzimática intrínseca o nuclear) y qué latencia de respuesta — milisegundos, segundos o horas — y qué tipo de segundo mensajero predice directamente esa clasificación para el efecto del fármaco?</li><li>Si el receptor es GPCR, ¿acopla a Gs, Gi, Gq u otra subunidad, qué molécula efectora modifica (adenilil ciclasa, fosfolipasa C, canales) y cómo esa diferencia explica por qué dos fármacos que actúan sobre el mismo receptor pueden producir efectos opuestos en el mismo tejido?</li><li>¿Por qué un antagonista competitivo clásico y un modulador alostérico negativo del mismo tipo de receptor producen curvas dosis-respuesta con formas distintas, y cuál de los dos es superable con dosis crecientes de agonista — dato que el ENAM pregunta con frecuencia en preguntas de gráficas?</li></ul><div class="fill" contenteditable="true" data-ph="Familia → transductor (proteína G / canal / enzima) → segundo mensajero → latencia de respuesta"></div></section>
+<div class="connector"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 4v15M6 13l6 6 6-6"/></svg></div>
+<section class="act"><div class="act-head">
+        <div class="act-num">3</div>
+        <div class="act-title"><div class="role">LOCALIZACIÓN TISULAR Y PERFIL CLÍNICO</div><h2>Sitio</h2></div>
+      </div><p class="act-essence">Establece en qué órganos y tejidos se expresa predominantemente el receptor, conecta esa distribución con el efecto terapéutico principal y deduce de ella los efectos adversos esperados y las variables farmacológicas que modulan el acceso al sitio diana.</p><ul class="prompts"><li>¿En qué órganos o tejidos predomina la expresión de este receptor, cuál es el efecto fisiológico que justifica su diana terapéutica principal, y qué sucede funcionalmente cuando ese tejido no es alcanzado de manera selectiva por el fármaco?</li><li>¿Cómo la distribución tisular del receptor explica los efectos adversos más frecuentes y predecibles de sus agonistas o antagonistas, y cuál de esos efectos adversos representa una contraindicación absoluta en el ENAM?</li><li>Si el receptor se expresa tanto en el sistema nervioso central como en la periferia, ¿qué propiedad fisicoquímica del fármaco determina si cruzará la barrera hematoencefálica, qué consecuencia clínica diferencia a los fármacos que la cruzan de los que no, y cuándo esa diferencia es decisiva para elegir entre dos opciones terapéuticas equivalentes en potencia?</li></ul><div class="fill" contenteditable="true" data-ph="Órgano / tejido principal → efecto terapéutico esperado → efecto adverso clave → variable de acceso al sitio"></div></section>
+  </div>
+  <p class="save-note" id="saveNote">Los cambios se guardan automáticamente en este navegador.</p>
+  <footer class="usamedic-footer">
+    <img src="assets/usamedic-logo-stacked.png" alt="USAMEDIC · Médicos de Excelencia">
+    <div class="tagline">Preparación Residentado Médico · ENAM · Internado</div>
+    <div class="links">
+      <a href="https://www.usamedic.pe" target="_blank" rel="noopener">usamedic.pe</a> ·
+      <a href="https://instagram.com/usamedic" target="_blank" rel="noopener">Instagram</a> ·
+      <a href="https://youtube.com/usamedic" target="_blank" rel="noopener">YouTube</a>
+    </div>
+  </footer>
+</div>
+<script>
+(function(){
+  var KEY='usamedic-tpl-receptor';
+  var fields=[document.getElementById('dx')].concat(Array.prototype.slice.call(document.querySelectorAll('.fill')));
+  var saved; try{saved=JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){saved={};}
+  fields.forEach(function(f,i){
+    if(saved['f'+i]!=null) f.innerHTML=saved['f'+i];
+    f.addEventListener('input',function(){
+      var data={}; fields.forEach(function(g,j){data['f'+j]=g.innerHTML;});
+      try{localStorage.setItem(KEY,JSON.stringify(data));}catch(e){}
+      document.getElementById('saveNote').textContent='Guardado ✓ — '+new Date().toLocaleTimeString();
+    });
+  });
+})();
+</script>
+</body></html>
